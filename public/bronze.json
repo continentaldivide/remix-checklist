@@ -1,0 +1,26 @@
+{
+  "vendors": [
+    {
+      "name": "vendor 1",
+      "items": [
+        {
+          "name": "item 1",
+          "cost": 300
+        }
+      ]
+    },
+    {
+      "name": "vendor 2",
+      "items": [
+        {
+          "name": "item 1",
+          "cost": 300
+        },
+        {
+          "name": "item 2",
+          "cost": 300
+        }
+      ]
+    }
+  ]
+}
