@@ -8,6 +8,7 @@ const bronze: BronzeType = {
         {
           name: "item 1",
           cost: 300,
+          id: 0,
         },
       ],
     },
@@ -17,10 +18,12 @@ const bronze: BronzeType = {
         {
           name: "item 1",
           cost: 300,
+          id: 1,
         },
         {
           name: "item 2",
           cost: 300,
+          id: 2,
         },
       ],
     },

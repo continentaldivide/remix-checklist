@@ -10,4 +10,5 @@ export interface VendorType {
 export interface ItemType {
   name: string;
   cost: number;
+  id: number;
 }
