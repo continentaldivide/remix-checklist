@@ -1,22 +1,23 @@
 import Item from "./Item";
 import { VendorType } from "../_interfaces/Bronze.interface";
+import React from "react";
 
 export default function Vendor({
   vendor,
-  checkedArray,
-  setCheckedArray,
+  checkedMap,
+  setCheckedMap,
 }: {
   vendor: VendorType;
-  checkedArray: boolean[];
-  setCheckedArray: any;
+  checkedMap: Record<string, boolean>;
+  setCheckedMap: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }) {
   const items = vendor.items.map((item, i) => {
     return (
       <Item
         item={item}
         key={`item ${i}`}
-        checkedArray={checkedArray}
-        setCheckedArray={setCheckedArray}
+        checkedMap={checkedMap}
+        setCheckedMap={setCheckedMap}
       />
     );
   });

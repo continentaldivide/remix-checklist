@@ -2,21 +2,18 @@ import { ItemType } from "../_interfaces/Bronze.interface";
 
 export default function Item({
   item,
-  checkedArray,
-  setCheckedArray,
+  checkedMap,
+  setCheckedMap,
 }: {
   item: ItemType;
-  checkedArray: boolean[];
-  setCheckedArray: any;
+  checkedMap: Record<string, boolean>;
+  setCheckedMap: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
 }) {
   const handleItemClick = () => {
-    let newCheckedArray = [...checkedArray];
-    newCheckedArray[item.id] = !checkedArray[item.id];
-    localStorage.setItem(
-      "checkedArray",
-      JSON.stringify({ checked: newCheckedArray })
-    );
-    setCheckedArray(newCheckedArray);
+    let newCheckedMap = { ...checkedMap };
+    newCheckedMap[item.id] = !checkedMap[item.id];
+    localStorage.setItem("checkedMap", JSON.stringify(newCheckedMap));
+    setCheckedMap(newCheckedMap);
   };
 
   return (
@@ -31,7 +28,7 @@ export default function Item({
         type="checkbox"
         name=""
         id=""
-        checked={checkedArray[item.id]}
+        checked={checkedMap[item.id]}
         onChange={handleItemClick}
       />
     </div>

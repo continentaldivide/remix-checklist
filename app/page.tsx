@@ -3,24 +3,24 @@ import bronze from "./_data/bronze";
 import Vendor from "./_components/Vendor";
 import { useState, useEffect } from "react";
 
+const defaultMap: Record<string, boolean> = {};
+
+for (let i = 0; i < 3; i++) {
+  defaultMap[i] = false;
+}
+
 export default function Home() {
   const bronzeTotal: number = 0;
-  const defaultArray = [false, false, false];
-  const [checkedArray, setCheckedArray] = useState(defaultArray);
+  const [checkedMap, setCheckedMap] =
+    useState<Record<string, boolean>>(defaultMap);
 
   useEffect(() => {
-    const localData = localStorage.getItem("checkedArray");
-    if (!localData) {
-      localStorage.setItem(
-        "checkedArray",
-        JSON.stringify({
-          checked: defaultArray,
-        })
-      );
-      setCheckedArray(defaultArray);
+    const localMap = localStorage.getItem("checkedMap");
+    if (!localMap) {
+      localStorage.setItem("checkedMap", JSON.stringify(defaultMap));
     } else {
-      const parsedLocalData = JSON.parse(localData);
-      setCheckedArray(parsedLocalData.checked);
+      const parsedLocalMap = JSON.parse(localMap);
+      setCheckedMap(parsedLocalMap);
     }
   }, []);
 
@@ -28,8 +28,8 @@ export default function Home() {
     return (
       <Vendor
         vendor={vendor}
-        checkedArray={checkedArray}
-        setCheckedArray={setCheckedArray}
+        checkedMap={checkedMap}
+        setCheckedMap={setCheckedMap}
         key={`vendor ${i}`}
       />
     );
