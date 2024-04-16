@@ -1,19 +1,10 @@
 import { ItemType } from "../_interfaces/Bronze.interface";
+import { useAppStateContext } from "../_context/AppStateContext";
 
-export default function Item({
-  item,
-  checkedMap,
-  setCheckedMap,
-}: {
-  item: ItemType;
-  checkedMap: Record<string, boolean>;
-  setCheckedMap: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
-}) {
+export default function Item({ item }: { item: ItemType }) {
+  const { appState, appStateDispatch } = useAppStateContext();
   const handleItemClick = () => {
-    let newCheckedMap = { ...checkedMap };
-    newCheckedMap[item.id] = !checkedMap[item.id];
-    localStorage.setItem("checkedMap", JSON.stringify(newCheckedMap));
-    setCheckedMap(newCheckedMap);
+    appStateDispatch({ type: "toggle checked", id: item.id });
   };
 
   return (
@@ -28,9 +19,9 @@ export default function Item({
         type="checkbox"
         name=""
         id=""
+        readOnly
         // operation below works fine without the OR condition, but makes react throw an error if checkedMap[item.id] produces a falsy value instead of a bool
-        checked={checkedMap[item.id] || false}
-        onChange={handleItemClick}
+        checked={appState.checkedMap[item.id] || false}
       />
     </div>
   );
