@@ -28,7 +28,8 @@ export default function Item({
         type="checkbox"
         name=""
         id=""
-        checked={checkedMap[item.id]}
+        // operation below works fine without the OR condition, but makes react throw an error if checkedMap[item.id] produces a falsy value instead of a bool
+        checked={checkedMap[item.id] || false}
         onChange={handleItemClick}
       />
     </div>
