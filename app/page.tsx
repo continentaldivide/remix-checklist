@@ -2,11 +2,12 @@
 import bronze from "./_data/bronze";
 import Vendor from "./_components/Vendor";
 import { useState, useEffect } from "react";
+import useCalculateBronze from "./_hooks/useCalculateBronze";
 
 const defaultMap: Record<string, boolean> = {};
 
 export default function Home() {
-  const bronzeTotal: number = 0;
+  let bronzeTotal: number = 0;
   const [checkedMap, setCheckedMap] =
     useState<Record<string, boolean>>(defaultMap);
 
@@ -19,6 +20,8 @@ export default function Home() {
       setCheckedMap(parsedLocalMap);
     }
   }, []);
+
+  bronzeTotal = useCalculateBronze(bronze, checkedMap);
 
   const vendors = bronze.vendors.map((vendor, i) => {
     return (
