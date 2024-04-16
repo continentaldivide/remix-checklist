@@ -5,10 +5,6 @@ import { useState, useEffect } from "react";
 
 const defaultMap: Record<string, boolean> = {};
 
-for (let i = 0; i < 3; i++) {
-  defaultMap[i] = false;
-}
-
 export default function Home() {
   const bronzeTotal: number = 0;
   const [checkedMap, setCheckedMap] =
