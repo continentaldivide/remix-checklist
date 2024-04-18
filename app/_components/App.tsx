@@ -22,17 +22,14 @@ export default function App() {
   bronzeTotal = useCalculateBronze(bronze, appState.checkedMap);
 
   const vendors = bronze.vendors.map((vendor, i) => {
-    return (
-      <Vendor
-        vendor={vendor}
-        key={`vendor ${i}`}
-      />
-    );
+    return <Vendor vendor={vendor} key={`vendor ${i}`} />;
   });
 
   return (
-    <div className="flex min-h-screen flex-col items-center p-24">
-      <p className="">total bronze required: {bronzeTotal}</p>
+    <div className="flex min-h-screen flex-col items-center p-12">
+      <h1 className="text-xl text-center p-2 w-full sticky top-0 bg-emerald-900">
+        total bronze required: {bronzeTotal}
+      </h1>
       {vendors}
     </div>
   );

@@ -7,8 +7,8 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     return <Item item={item} key={`item ${i}`} />;
   });
   return (
-    <div className="w-1/4 border border-purple-900">
-      <p>{vendor.name}</p>
+    <div className="">
+      <h1 className="text-lg text-center bg-[#732c1a]">{vendor.name}</h1>
       <div>{items}</div>
     </div>
   );

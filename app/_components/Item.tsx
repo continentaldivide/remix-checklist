@@ -9,7 +9,7 @@ export default function Item({ item }: { item: ItemType }) {
 
   return (
     <div
-      className="border border-pink-800 flex justify-between"
+      className="flex justify-between odd:bg-emerald-700 even:bg-emerald-800"
       onClick={handleItemClick}
     >
       <p>
