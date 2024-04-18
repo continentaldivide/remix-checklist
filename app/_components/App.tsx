@@ -26,11 +26,19 @@ export default function App() {
   });
 
   return (
-    <div className="flex min-h-screen flex-col items-center p-12">
+    <div className="flex min-h-screen flex-col items-center p-12 pb-20">
       <h1 className="text-xl text-center p-2 w-full sticky top-0 bg-emerald-900">
         total bronze required: {bronzeTotal}
       </h1>
       {vendors}
+      <button
+        onClick={() => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        className="fixed bottom-4 min-w-[50%] text-xl p-2 bg-emerald-900/90 rounded-md"
+      >
+        back to top
+      </button>
     </div>
   );
 }
