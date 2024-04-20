@@ -22,13 +22,20 @@ const appStateReducer: (
         ...state,
         yPosition: action.position,
       };
+    case "toggle vendor":
+      let newVendorMap = { ...state.closedVendorMap };
+      newVendorMap[action.id] = !state.closedVendorMap[action.id];
+      return {
+        ...state,
+        closedVendorMap: newVendorMap,
+      };
     case "toggle checked":
       let newCheckedMap = { ...state.checkedMap };
       newCheckedMap[action.id] = !state.checkedMap[action.id];
       localStorage.setItem("checkedMap", JSON.stringify(newCheckedMap));
       return {
         ...state,
-        checkedMap: { ...newCheckedMap },
+        checkedMap: newCheckedMap,
       };
     default:
       return state;
@@ -38,6 +45,7 @@ const appStateReducer: (
 const initialState: AppStateType = {
   checkedMap: {},
   yPosition: 0,
+  closedVendorMap: {},
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {

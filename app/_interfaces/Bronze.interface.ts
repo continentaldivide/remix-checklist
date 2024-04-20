@@ -5,6 +5,7 @@ export interface BronzeType {
 export interface VendorType {
   name: string;
   description: string;
+  id: number;
   items: ItemType[];
 }
 

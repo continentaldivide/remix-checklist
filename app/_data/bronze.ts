@@ -5,6 +5,7 @@ const bronze: BronzeType = {
     {
       name: "Aeonicus",
       description: "Raid Finder Apparel",
+      id: 0,
       items: [
         {
           name: "Regalia of the Burning Scroll",
@@ -176,6 +177,7 @@ const bronze: BronzeType = {
     {
       name: "Durus",
       description: "Normal Raid Apparel",
+      id: 1,
       items: [
         {
           name: "Regalia of the Burning Scroll",
