@@ -17,6 +17,11 @@ const appStateReducer: (
         ...state,
         checkedMap: { ...action.checkedMap },
       };
+    case "set YPosition":
+      return {
+        ...state,
+        yPosition: action.position,
+      };
     case "toggle checked":
       let newCheckedMap = { ...state.checkedMap };
       newCheckedMap[action.id] = !state.checkedMap[action.id];
@@ -32,6 +37,7 @@ const appStateReducer: (
 
 const initialState: AppStateType = {
   checkedMap: {},
+  yPosition: 0,
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {

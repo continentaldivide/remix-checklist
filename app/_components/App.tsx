@@ -9,6 +9,10 @@ export default function App() {
   const defaultMap: Record<string, boolean> = {};
   let bronzeTotal: number = 0;
 
+  const handleScroll = () => {
+    appStateDispatch({ type: "set YPosition", position: window.scrollY });
+  };
+
   useEffect(() => {
     const localMap = localStorage.getItem("checkedMap");
     if (!localMap) {
@@ -17,6 +21,10 @@ export default function App() {
       const parsedLocalMap = JSON.parse(localMap);
       appStateDispatch({ type: "set checkedMap", checkedMap: parsedLocalMap });
     }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   bronzeTotal = useCalculateBronze(bronze, appState.checkedMap);
@@ -31,14 +39,20 @@ export default function App() {
         total bronze required: {bronzeTotal}
       </h1>
       {vendors}
-      <button
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
-        className="fixed bottom-4 min-w-[50%] text-xl p-2 bg-emerald-900/90 rounded-md"
-      >
-        back to top
-      </button>
+      {appState.yPosition === 0 ? null : (
+        <button
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            appStateDispatch({
+              type: "set YPosition",
+              position: 0,
+            });
+          }}
+          className="fixed bottom-4 min-w-[50%] text-xl p-2 bg-emerald-900/90 rounded-md"
+        >
+          back to top
+        </button>
+      )}
     </div>
   );
 }
