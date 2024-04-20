@@ -9,8 +9,12 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     return <Item item={item} key={`item ${i}`} />;
   });
   return (
-    <div>
-      <div className="text-center bg-emerald-950 sticky top-11">
+    <div className="w-full rounded-md mb-2">
+      <div
+        className={`sticky top-11 text-center ${
+          vendorIsClosed ? "rounded-md" : "rounded-t-md"
+        }  bg-emerald-950`}
+      >
         <h1 className="text-xl">{vendor.name}</h1>
         <h2 className="text-lg">{vendor.description}</h2>
         <button
@@ -19,7 +23,10 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
             appStateDispatch({ type: "toggle vendor", id: vendor.id });
           }}
         >
-          {vendorIsClosed ? "+" : "-"}
+          <img
+            src={vendorIsClosed ? "expand.svg" : "collapse.svg"}
+            className="mx-auto"
+          />
         </button>
       </div>
       {vendorIsClosed ? null : items}

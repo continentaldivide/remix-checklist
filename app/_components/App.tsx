@@ -35,7 +35,8 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen flex-col items-center p-12 pb-20">
-      <h1 className="text-xl text-center p-2 z-10 w-full sticky top-0 bg-emerald-900">
+      {/* z-positioning here needs to be higher than Vendor header so that Vendor header hides when it gets bumped off the screen by the next vendor */}
+      <h1 className="text-xl text-center p-2 z-20 w-full sticky top-0 bg-emerald-900">
         total bronze required: {bronzeTotal}
       </h1>
       {vendors}

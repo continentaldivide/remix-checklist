@@ -9,10 +9,10 @@ export default function Item({ item }: { item: ItemType }) {
 
   return (
     <div
-      className="flex justify-between odd:bg-emerald-700 even:bg-emerald-800 select-none cursor-pointer"
+      className="flex justify-between odd:bg-emerald-700 even:bg-emerald-800 select-none cursor-pointer last:rounded-b-md"
       onClick={handleItemClick}
     >
-      <div className="">
+      <div>
         <p>
           {item.name}: {item.cost}
         </p>
