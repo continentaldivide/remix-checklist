@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <div className="flex min-h-screen flex-col items-center p-12 pb-20">
-      <h1 className="text-xl text-center p-2 w-full sticky top-0 bg-emerald-900">
+      <h1 className="text-xl text-center p-2 z-10 w-full sticky top-0 bg-emerald-900">
         total bronze required: {bronzeTotal}
       </h1>
       {vendors}
