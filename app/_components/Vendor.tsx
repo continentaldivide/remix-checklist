@@ -11,14 +11,17 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
   return (
     <div className="w-full rounded-md mb-2">
       <div
-        className={`sticky top-11 text-center ${
+        className={`sticky top-11 flex justify-between items-center p-2 text-center ${
           vendorIsClosed ? "rounded-md" : "rounded-t-md"
         }  bg-emerald-950`}
       >
-        <h1 className="text-xl">{vendor.name}</h1>
-        <h2 className="text-lg">{vendor.description}</h2>
+        <div className="min-w-8"></div>
+        <div>
+          <h1 className="text-xl">{vendor.name}</h1>
+          <h2 className="text-lg">{vendor.description}</h2>
+        </div>
         <button
-          className="absolute top-2 right-2 min-w-8 min-h-8 bg-emerald-900 rounded-md"
+          className="min-w-8 min-h-8 bg-emerald-900 rounded-md"
           onClick={() => {
             appStateDispatch({ type: "toggle vendor", id: vendor.id });
           }}
