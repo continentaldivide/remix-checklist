@@ -3,6 +3,11 @@ interface setCheckedMap {
   checkedMap: Record<string, boolean>;
 }
 
+interface setVendorMap {
+  type: "set vendorMap";
+  vendorMap: Record<string, boolean>;
+}
+
 interface setYPosition {
   type: "set YPosition";
   position: number;
@@ -20,6 +25,7 @@ interface toggleChecked {
 
 export type AppActionsType =
   | setCheckedMap
+  | setVendorMap
   | setYPosition
   | toggleVendor
   | toggleChecked;

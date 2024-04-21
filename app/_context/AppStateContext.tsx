@@ -17,6 +17,11 @@ const appStateReducer: (
         ...state,
         checkedMap: { ...action.checkedMap },
       };
+    case "set vendorMap":
+      return {
+        ...state,
+        closedVendorMap: { ...action.vendorMap },
+      };
     case "set YPosition":
       return {
         ...state,
@@ -25,6 +30,7 @@ const appStateReducer: (
     case "toggle vendor":
       let newVendorMap = { ...state.closedVendorMap };
       newVendorMap[action.id] = !state.closedVendorMap[action.id];
+      localStorage.setItem("vendorMap", JSON.stringify(newVendorMap));
       return {
         ...state,
         closedVendorMap: newVendorMap,

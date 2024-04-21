@@ -14,12 +14,25 @@ export default function App() {
   };
 
   useEffect(() => {
-    const localMap = localStorage.getItem("checkedMap");
-    if (!localMap) {
+    const localCheckedMap = localStorage.getItem("checkedMap");
+    if (!localCheckedMap) {
       localStorage.setItem("checkedMap", JSON.stringify(defaultMap));
     } else {
-      const parsedLocalMap = JSON.parse(localMap);
-      appStateDispatch({ type: "set checkedMap", checkedMap: parsedLocalMap });
+      const parsedLocalCheckedMap = JSON.parse(localCheckedMap);
+      appStateDispatch({
+        type: "set checkedMap",
+        checkedMap: parsedLocalCheckedMap,
+      });
+    }
+    const localVendorMap = localStorage.getItem("vendorMap");
+    if (!localVendorMap) {
+      localStorage.setItem("vendorMap", JSON.stringify(defaultMap));
+    } else {
+      const parsedLocalVendorMap = JSON.parse(localVendorMap);
+      appStateDispatch({
+        type: "set vendorMap",
+        vendorMap: parsedLocalVendorMap,
+      });
     }
     window.addEventListener("scroll", handleScroll);
     return () => {
