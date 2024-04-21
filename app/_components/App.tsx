@@ -9,31 +9,32 @@ export default function App() {
   const defaultMap: Record<string, boolean> = {};
   let bronzeTotal: number = 0;
 
+  const retrieveLocalMap = (mapName: "checkedMap" | "vendorMap") => {
+    const localMap = localStorage.getItem(mapName);
+    if (!localMap) {
+      localStorage.setItem(mapName, JSON.stringify(defaultMap));
+    } else {
+      const parsedLocalMap: Record<string, boolean> = JSON.parse(localMap);
+      //   ternary here is redundant but TS freaks out without it -- will revisit this later to try and understand the issue with my typing
+      mapName === "checkedMap"
+        ? appStateDispatch({
+            type: `set ${mapName}`,
+            [mapName]: parsedLocalMap,
+          })
+        : appStateDispatch({
+            type: `set ${mapName}`,
+            [mapName]: parsedLocalMap,
+          });
+    }
+  };
+
   const handleScroll = () => {
     appStateDispatch({ type: "set YPosition", position: window.scrollY });
   };
 
   useEffect(() => {
-    const localCheckedMap = localStorage.getItem("checkedMap");
-    if (!localCheckedMap) {
-      localStorage.setItem("checkedMap", JSON.stringify(defaultMap));
-    } else {
-      const parsedLocalCheckedMap = JSON.parse(localCheckedMap);
-      appStateDispatch({
-        type: "set checkedMap",
-        checkedMap: parsedLocalCheckedMap,
-      });
-    }
-    const localVendorMap = localStorage.getItem("vendorMap");
-    if (!localVendorMap) {
-      localStorage.setItem("vendorMap", JSON.stringify(defaultMap));
-    } else {
-      const parsedLocalVendorMap = JSON.parse(localVendorMap);
-      appStateDispatch({
-        type: "set vendorMap",
-        vendorMap: parsedLocalVendorMap,
-      });
-    }
+    retrieveLocalMap("checkedMap");
+    retrieveLocalMap("vendorMap");
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
