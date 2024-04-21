@@ -351,6 +351,179 @@ const bronze: BronzeType = {
         },
       ],
     },
+    {
+      name: "Pythagorus",
+      description: "Heroic and Mythic Raid Apparel",
+      id: 2,
+      items: [
+        {
+          name: "Regalia of the Burning Scroll",
+          cost: 5000,
+          id: 67,
+        },
+        {
+          name: "Regalia of the Chromatic Hydra",
+          cost: 5000,
+          id: 68,
+        },
+
+        {
+          name: "Guardian Serpent Regalia",
+          cost: 5000,
+          id: 69,
+        },
+        {
+          name: "Regalia of the Exorcist",
+          cost: 5000,
+          id: 70,
+        },
+        {
+          name: "Sha Skin Regalia",
+          cost: 5000,
+          id: 71,
+        },
+        {
+          name: "Regalia of the Thousandfold Hells",
+          cost: 5000,
+          id: 72,
+        },
+        {
+          name: "Vestments of the Eternal Blossom",
+          cost: 5000,
+          id: 73,
+        },
+        {
+          name: "Vestments of the Haunted Forest",
+          cost: 5000,
+          id: 74,
+        },
+        {
+          name: "Vestments of the Red Crane",
+          cost: 5000,
+          id: 75,
+        },
+        {
+          name: "Fire-Charm Vestments",
+          cost: 5000,
+          id: 76,
+        },
+        {
+          name: "Battlegear of the Thousandfold Blades",
+          cost: 5000,
+          id: 77,
+        },
+        {
+          name: "Nine-Tail Battlegear",
+          cost: 5000,
+          id: 78,
+        },
+        {
+          name: "Yuangol Slayer Battlegear",
+          cost: 5000,
+          id: 79,
+        },
+        {
+          name: "Battlegear of the Saurok Stalker",
+          cost: 5000,
+          id: 80,
+        },
+        {
+          name: "Regalia of the Firebird",
+          cost: 5000,
+          id: 81,
+        },
+        {
+          name: "Regalia of the Witch Doctor",
+          cost: 5000,
+          id: 82,
+        },
+        {
+          name: "Plate of the Lost Catacomb",
+          cost: 5000,
+          id: 83,
+        },
+        {
+          name: "Battleplate of the All-Consuming Maw",
+          cost: 5000,
+          id: 84,
+        },
+        {
+          name: "White Tiger Battlegear",
+          cost: 5000,
+          id: 85,
+        },
+        {
+          name: "Battlegear of the Lightning Emperor",
+          cost: 5000,
+          id: 86,
+        },
+        {
+          name: "Battleplate of Resounding Rings",
+          cost: 5000,
+          id: 87,
+        },
+        {
+          name: "Battleplate of the Last Mogu",
+          cost: 5000,
+          id: 88,
+        },
+        {
+          name: "Chronomancer Regalia",
+          cost: 5000,
+          id: 89,
+        },
+        {
+          name: "Regalia of Ternion Glory",
+          cost: 5000,
+          id: 90,
+        },
+        {
+          name: "Regalia of the Horned Nightmare",
+          cost: 5000,
+          id: 91,
+        },
+        {
+          name: "Vestments of the Shattered Vale",
+          cost: 5000,
+          id: 92,
+        },
+        {
+          name: "Vestments of the Seven Sacred Seals",
+          cost: 5000,
+          id: 93,
+        },
+        {
+          name: "Barbed Assassin Battlegear",
+          cost: 5000,
+          id: 94,
+        },
+        {
+          name: "Battlegear of the Unblinking Vigil",
+          cost: 5000,
+          id: 95,
+        },
+        {
+          name: "Regalia of Celestial Harmony",
+          cost: 5000,
+          id: 96,
+        },
+        {
+          name: "Battleplate of the Cyclopean Dread",
+          cost: 5000,
+          id: 97,
+        },
+        {
+          name: "Vestments of Winged Triumph",
+          cost: 5000,
+          id: 98,
+        },
+        {
+          name: "Battleplate of the Prehistoric Marauder",
+          cost: 5000,
+          id: 99,
+        },
+      ],
+    },
   ],
 };
 
