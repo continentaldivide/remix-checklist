@@ -13,4 +13,20 @@ export interface ItemType {
   name: string;
   cost: number;
   id: number;
+  wowheadId?: number;
+  type?: "cloth" | "leather" | "mail" | "plate";
+  class?:
+    | "mage"
+    | "priest"
+    | "warlock"
+    | "druid"
+    | "rogue"
+    | "monk"
+    | "demon hunter"
+    | "hunter"
+    | "shaman"
+    | "evoker"
+    | "warrior"
+    | "paladin"
+    | "death knight";
 }
