@@ -9,28 +9,32 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     return <Item item={item} key={`item ${i}`} />;
   });
   return (
-    <div className="w-full rounded-md mb-2">
-      <div
-        className={`sticky top-11 flex justify-between items-center p-2 text-center ${
-          vendorIsClosed ? "rounded-md" : "rounded-t-md"
-        }  bg-emerald-950`}
-      >
-        <div className="min-w-8"></div>
-        <div>
-          <h1 className="text-xl">{vendor.name}</h1>
-          <h2 className="text-lg">{vendor.description}</h2>
-        </div>
-        <button
-          className="min-w-8 min-h-8 bg-emerald-900 rounded-md"
-          onClick={() => {
-            appStateDispatch({ type: "toggle vendor", id: vendor.id });
-          }}
+    <div className="relative w-full rounded-md mb-2">
+      <div className="sticky top-11">
+        <div
+          className={`flex justify-between items-center p-2 text-center ${
+            vendorIsClosed ? "rounded-md" : "rounded-t-md"
+          }  bg-emerald-950`}
         >
-          <img
-            src={vendorIsClosed ? "expand.svg" : "collapse.svg"}
-            className="mx-auto"
-          />
-        </button>
+          <div className="min-w-8"></div>
+          <div>
+            <h1 className="text-xl">{vendor.name}</h1>
+            <h2 className="text-lg">{vendor.description}</h2>
+          </div>
+          <button
+            className="min-w-8 min-h-8 bg-emerald-900 rounded-md"
+            onClick={() => {
+              appStateDispatch({ type: "toggle vendor", id: vendor.id });
+            }}
+          >
+            <img
+              src={vendorIsClosed ? "expand.svg" : "collapse.svg"}
+              className="mx-auto"
+            />
+          </button>
+        </div>
+        {/* This div hides the top corners of item components from peeking out behind the rounded top edges of vendor banners */}
+        <div className="absolute top-0 left-0 -z-10 w-full bg-emerald-900 min-h-2"></div>
       </div>
       {vendorIsClosed ? null : items}
     </div>
