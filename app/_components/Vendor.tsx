@@ -9,10 +9,10 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     return <Item item={item} key={`item ${i}`} />;
   });
   return (
-    <div className="relative w-full rounded-md mb-2">
+    <div className="w-full rounded-md mb-2">
       <div className="sticky top-11">
         <div
-          className={`flex justify-between items-center p-2 text-center ${
+          className={`flex gap-1 justify-between items-center p-2 text-center ${
             vendorIsClosed ? "rounded-md" : "rounded-t-md"
           }  bg-emerald-950`}
         >
