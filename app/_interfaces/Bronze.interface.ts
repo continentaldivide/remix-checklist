@@ -13,6 +13,7 @@ export interface ItemType {
   name: string;
   cost: number;
   id: number;
+  eventOnlyItem: boolean;
   wowheadId?: number;
   type?: "cloth" | "leather" | "mail" | "plate";
   class?:
