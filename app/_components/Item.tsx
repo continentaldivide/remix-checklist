@@ -9,17 +9,19 @@ export default function Item({ item }: { item: ItemType }) {
 
   return (
     <div
-      className="flex justify-between odd:bg-emerald-700 even:bg-emerald-800 select-none cursor-pointer last:rounded-b-md"
+      className="flex justify-end min-h-12 odd:bg-emerald-700 even:bg-emerald-800 select-none cursor-pointer last:rounded-b-md"
       onClick={handleItemClick}
     >
-      <div>
-        <p>
-          {item.name}: {item.cost}
-        </p>
-        <p>
-          {/* PH -- going to add additional text/info about each item */}
-          {item.name}: {item.cost}
-        </p>
+      <div className="w-full mx-2 my-auto">
+        <p className="text-lg">{item.name}</p>
+      </div>
+      <div className="relative shrink-0 size-8 my-auto">
+        <img
+          src="bronze.jpg"
+          alt="Icon for MOP Remix Bronze currency."
+          className="brightness-50 rounded-md"
+        />
+        <p className="absolute text-xs top-2 font-bold">{item.cost}</p>
       </div>
       <input
         type="checkbox"
@@ -28,7 +30,7 @@ export default function Item({ item }: { item: ItemType }) {
         readOnly
         // operation below works fine without the OR condition, but makes react throw an error if checkedMap[item.id] produces a falsy value instead of a bool
         checked={appState.checkedMap[item.id] || false}
-        className="min-w-8 min-h-8 mx-2 my-auto  text-emerald-900 rounded-md cursor-pointer"
+        className="size-8 mx-2 my-auto text-emerald-900 rounded-md cursor-pointer"
       />
     </div>
   );
