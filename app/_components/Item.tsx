@@ -27,7 +27,7 @@ export default function Item({ item }: { item: ItemType }) {
             target="_blank"
           >
             <img
-              src="wowhead.png"
+              src="wowhead-small.png"
               alt="Link to Wowhead item page."
               className="rounded-md"
             />
