@@ -15,6 +15,25 @@ export default function Item({ item }: { item: ItemType }) {
       <div className="w-full mx-2 my-auto">
         <p className="text-lg">{item.name}</p>
       </div>
+      {item.wowheadId ? (
+        <div
+          className="relative mx-2 shrink-0 size-8 my-auto"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          <a
+            href={`https://wowhead.com/item=${item.wowheadId}`}
+            target="_blank"
+          >
+            <img
+              src="wowhead.png"
+              alt="Link to Wowhead item page."
+              className="rounded-md"
+            />
+          </a>
+        </div>
+      ) : null}
       <div className="relative shrink-0 size-8 my-auto">
         <img
           src="bronze.jpg"
