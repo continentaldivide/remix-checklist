@@ -20,7 +20,9 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
           <div className="min-w-8"></div>
           <div>
             <h1 className="text-xl">{vendor.name}</h1>
-            <h2 className="text-lg">{vendor.description}</h2>
+            {vendorIsClosed ? null : (
+              <h2 className="text-lg">{vendor.description}</h2>
+            )}
           </div>
           <button
             className="min-w-8 min-h-8 bg-emerald-900 rounded-md"
