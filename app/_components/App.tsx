@@ -63,7 +63,7 @@ export default function App() {
               position: 0,
             });
           }}
-          className="fixed bottom-4 min-w-[50%] text-xl p-2 bg-emerald-900/90 rounded-md"
+          className="fixed bottom-4 min-w-[50%] text-xl p-2 bg-emerald-900/90 rounded-md z-20"
         >
           back to top
         </button>
