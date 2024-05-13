@@ -9,14 +9,14 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     return <Item item={item} key={`item ${i}`} />;
   });
   return (
-    <div
-      className="w-full rounded-md mb-2 cursor-pointer"
-      onClick={() => {
-        appStateDispatch({ type: "toggle vendor", id: vendor.id });
-      }}
-    >
+    <div className="w-full rounded-md mb-2 cursor-pointer">
       {/* sticky element below is in a stacking context with item's <img> tag since it has a brightness property -- needs to have a z-index to keep the img from appearing on top */}
-      <div className="sticky top-11 z-10">
+      <div
+        className="sticky top-11 z-10"
+        onClick={() => {
+          appStateDispatch({ type: "toggle vendor", id: vendor.id });
+        }}
+      >
         <div
           className={`flex gap-1 justify-between items-center p-2 text-center ${
             vendorIsClosed ? "rounded-md" : "rounded-t-md"
