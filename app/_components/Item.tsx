@@ -40,7 +40,9 @@ export default function Item({ item }: { item: ItemType }) {
           alt="Icon for MOP Remix Bronze currency."
           className="brightness-50 rounded-md"
         />
-        <p className="absolute text-xs top-2 font-bold">{item.cost}</p>
+        <p className="absolute top-2 w-8 text-xs font-bold flex justify-center">
+          {item.cost}
+        </p>
       </div>
       <input
         type="checkbox"
