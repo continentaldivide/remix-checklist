@@ -24,9 +24,9 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
         >
           <div className="min-w-8"></div>
           <div>
-            <h1 className="text-xl">{vendor.name}</h1>
+            <h1 className="text-xl lg:text-3xl">{vendor.name}</h1>
             {vendorIsClosed ? null : (
-              <h2 className="text-lg">{vendor.description}</h2>
+              <h2 className="text-lg lg:text-2xl">{vendor.description}</h2>
             )}
           </div>
           <img
