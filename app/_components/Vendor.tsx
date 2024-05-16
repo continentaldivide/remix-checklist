@@ -26,7 +26,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
             vendorIsClosed ? "rounded-md" : "rounded-t-md"
           }  bg-emerald-950 ${vendorIsIgnored ? "brightness-50" : null}`}
         >
-          <div className="w-8">
+          <div className="size-8 flex justify-center items-center">
             <button
               className="text-sm"
               onClick={(e) => {
@@ -43,11 +43,13 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
                 });
               }}
             >
-              {appState.ignoredVendorMap[vendor.id] ? "show" : "ignore"}
+              <img src={vendorIsIgnored ? "eye-crossed-out.svg" : "eye.svg"} />
             </button>
           </div>
           <div>
-            <h1 className="text-xl lg:text-3xl">{vendor.name}</h1>
+            <h1 className="text-xl lg:text-3xl">
+              {vendor.name} {vendorIsIgnored ? "(ignored)" : null}
+            </h1>
             {vendorIsClosed ? null : (
               <h2 className="text-lg lg:text-2xl">{vendor.description}</h2>
             )}
