@@ -6,7 +6,7 @@ import Header from "./_components/Header";
 
 export default function Home() {
   return (
-    <main className="bg-emerald-900">
+    <main className="min-h-screen bg-emerald-900">
       <AppStateContextProvider>
         <Header />
         <App />
