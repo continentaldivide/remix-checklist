@@ -13,7 +13,7 @@ export default function Item({ item }: { item: ItemType }) {
       onClick={handleItemClick}
     >
       <div className="w-full mx-2 my-auto">
-        <p className="text-lg lg:text-xl">{item.name}</p>
+        <p className="lg:text-xl">{item.name}</p>
       </div>
       {item.wowheadId ? (
         <div
