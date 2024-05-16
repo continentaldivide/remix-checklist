@@ -1014,7 +1014,7 @@ const bronze: BronzeType = {
       id: 3,
       items: [
         {
-          name: "Breezebinder's Vestments",
+          name: "Breezebinder's Vestments (Original)",
           cost: 2500,
           id: 100,
           eventOnlyItem: false,
@@ -1022,7 +1022,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Breezebinder's Vestments",
+          name: "Breezebinder's Vestments (Purple)",
           cost: 2500,
           id: 101,
           eventOnlyItem: false,
@@ -1030,7 +1030,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Breezebinder's Vestments",
+          name: "Breezebinder's Vestments (Red)",
           cost: 2500,
           id: 102,
           eventOnlyItem: false,
@@ -1038,7 +1038,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mogubreaker Battlegear",
+          name: "Mogubreaker Battlegear (Black)",
           cost: 2500,
           id: 103,
           eventOnlyItem: false,
@@ -1046,7 +1046,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mogubreaker Battlegear",
+          name: "Mogubreaker Battlegear (Original)",
           cost: 2500,
           id: 104,
           eventOnlyItem: false,
@@ -1054,7 +1054,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mogubreaker Battlegear",
+          name: "Mogubreaker Battlegear (Red)",
           cost: 2500,
           id: 105,
           eventOnlyItem: false,
@@ -1062,7 +1062,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mogubreaker Battlegear",
+          name: "Mogubreaker Battlegear (Yellow)",
           cost: 2500,
           id: 106,
           eventOnlyItem: false,
@@ -1070,7 +1070,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mogu Lord's Regalia",
+          name: "Mogu Lord's Regalia (Black)",
           cost: 2500,
           id: 107,
           eventOnlyItem: false,
@@ -1078,7 +1078,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Mogu Lord's Regalia",
+          name: "Mogu Lord's Regalia (Gold)",
           cost: 2500,
           id: 108,
           eventOnlyItem: false,
@@ -1086,7 +1086,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Mogu Lord's Regalia",
+          name: "Mogu Lord's Regalia (Jade)",
           cost: 2500,
           id: 109,
           eventOnlyItem: false,
@@ -1094,7 +1094,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Swarmbreaker's Battleplate",
+          name: "Swarmbreaker's Battleplate (Dark)",
           cost: 2500,
           id: 110,
           eventOnlyItem: false,
@@ -1102,7 +1102,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Swarmbreaker's Battleplate",
+          name: "Swarmbreaker's Battleplate (Light)",
           cost: 2500,
           id: 111,
           eventOnlyItem: false,
@@ -1110,7 +1110,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Swarmbreaker's Battleplate",
+          name: "Swarmbreaker's Battleplate (Original)",
           cost: 2500,
           id: 112,
           eventOnlyItem: false,
@@ -1353,7 +1353,7 @@ const bronze: BronzeType = {
       id: 5,
       items: [
         {
-          name: "Spirit-Waker's Vestments",
+          name: "Spirit-Waker's Vestments (Blue)",
           cost: 750,
           id: 139,
           eventOnlyItem: false,
@@ -1361,7 +1361,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Spirit-Waker's Vestments",
+          name: "Spirit-Waker's Vestments (Green)",
           cost: 750,
           id: 140,
           eventOnlyItem: false,
@@ -1369,7 +1369,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Spirit-Waker's Vestments",
+          name: "Spirit-Waker's Vestments (Red)",
           cost: 750,
           id: 141,
           eventOnlyItem: false,
@@ -1377,7 +1377,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mistwalker's Vestments",
+          name: "Mistwalker's Vestments (Blue)",
           cost: 750,
           id: 142,
           eventOnlyItem: false,
@@ -1385,7 +1385,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mistwalker's Vestments",
+          name: "Mistwalker's Vestments (Original)",
           cost: 750,
           id: 143,
           eventOnlyItem: false,
@@ -1393,7 +1393,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mistwalker's Vestments",
+          name: "Mistwalker's Vestments (White)",
           cost: 750,
           id: 144,
           eventOnlyItem: false,
@@ -1401,7 +1401,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Vestments of the Eternal Dynasty",
+          name: "Vestments of the Eternal Dynasty (Black)",
           cost: 2000,
           id: 145,
           eventOnlyItem: false,
@@ -1409,7 +1409,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Vestments of the Eternal Dynasty",
+          name: "Vestments of the Eternal Dynasty (Blue)",
           cost: 2000,
           id: 146,
           eventOnlyItem: false,
@@ -1417,7 +1417,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Vestments of the Eternal Dynasty",
+          name: "Vestments of the Eternal Dynasty (Yellow)",
           cost: 2000,
           id: 147,
           eventOnlyItem: false,
@@ -1425,7 +1425,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Thunderpaw Battlegear",
+          name: "Thunderpaw Battlegear (Dark)",
           cost: 750,
           id: 148,
           eventOnlyItem: false,
@@ -1433,7 +1433,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Thunderpaw Battlegear",
+          name: "Thunderpaw Battlegear (Light)",
           cost: 750,
           id: 149,
           eventOnlyItem: false,
@@ -1441,7 +1441,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Thunderpaw Battlegear",
+          name: "Thunderpaw Battlegear (Original)",
           cost: 750,
           id: 150,
           eventOnlyItem: false,
@@ -1449,7 +1449,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Thunderpaw Battlegear",
+          name: "Thunderpaw Battlegear (Red)",
           cost: 750,
           id: 151,
           eventOnlyItem: false,
@@ -1457,7 +1457,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mistveil Leathers",
+          name: "Mistveil Leathers (Black)",
           cost: 750,
           id: 152,
           eventOnlyItem: false,
@@ -1465,7 +1465,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mistveil Leathers",
+          name: "Mistveil Leathers (Brown)",
           cost: 750,
           id: 153,
           eventOnlyItem: false,
@@ -1473,7 +1473,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mistveil Leathers",
+          name: "Mistveil Leathers (Crimson)",
           cost: 750,
           id: 154,
           eventOnlyItem: false,
@@ -1481,7 +1481,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Mistveil Leathers",
+          name: "Mistveil Leathers (Indigo)",
           cost: 750,
           id: 155,
           eventOnlyItem: false,
@@ -1489,7 +1489,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Snowdrift Battlegear",
+          name: "Snowdrift Battlegear (Blue)",
           cost: 2000,
           id: 156,
           eventOnlyItem: false,
@@ -1497,7 +1497,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Snowdrift Battlegear",
+          name: "Snowdrift Battlegear (Brown)",
           cost: 2000,
           id: 157,
           eventOnlyItem: false,
@@ -1505,7 +1505,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Snowdrift Battlegear",
+          name: "Snowdrift Battlegear (Red)",
           cost: 2000,
           id: 158,
           eventOnlyItem: false,
@@ -1513,7 +1513,7 @@ const bronze: BronzeType = {
           type: "leather",
         },
         {
-          name: "Trailseeker's Laminar Armor",
+          name: "Trailseeker's Laminar Armor (Black)",
           cost: 750,
           id: 159,
           eventOnlyItem: false,
@@ -1521,7 +1521,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Trailseeker's Laminar Armor",
+          name: "Trailseeker's Laminar Armor (Gold)",
           cost: 750,
           id: 160,
           eventOnlyItem: false,
@@ -1529,7 +1529,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Trailseeker's Laminar Armor",
+          name: "Trailseeker's Laminar Armor (Green)",
           cost: 750,
           id: 161,
           eventOnlyItem: false,
@@ -1537,7 +1537,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Trailseeker's Laminar Armor",
+          name: "Trailseeker's Laminar Armor (White)",
           cost: 750,
           id: 162,
           eventOnlyItem: false,
@@ -1545,7 +1545,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Dawnwatcher's Scale Armor",
+          name: "Dawnwatcher's Scale Armor (Blue)",
           cost: 750,
           id: 163,
           eventOnlyItem: false,
@@ -1553,7 +1553,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Dawnwatcher's Scale Armor",
+          name: "Dawnwatcher's Scale Armor (Purple)",
           cost: 750,
           id: 164,
           eventOnlyItem: false,
@@ -1561,7 +1561,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Dawnwatcher's Scale Armor",
+          name: "Dawnwatcher's Scale Armor (Red)",
           cost: 750,
           id: 165,
           eventOnlyItem: false,
@@ -1569,7 +1569,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Jade Guardian's Regalia",
+          name: "Jade Guardian's Regalia (Blue)",
           cost: 2000,
           id: 166,
           eventOnlyItem: false,
@@ -1577,7 +1577,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Jade Guardian's Regalia",
+          name: "Jade Guardian's Regalia (Brown)",
           cost: 2000,
           id: 167,
           eventOnlyItem: false,
@@ -1585,7 +1585,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Jade Guardian's Regalia",
+          name: "Jade Guardian's Regalia (Red)",
           cost: 2000,
           id: 168,
           eventOnlyItem: false,
@@ -1593,7 +1593,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Jade Guardian's Regalia",
+          name: "Jade Guardian's Regalia (Yellow)",
           cost: 2000,
           id: 169,
           eventOnlyItem: false,
@@ -1601,7 +1601,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Spiritguard's Warplate",
+          name: "Spiritguard's Warplate (Blue)",
           cost: 750,
           id: 170,
           eventOnlyItem: false,
@@ -1609,7 +1609,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Spiritguard's Warplate",
+          name: "Spiritguard's Warplate (Gold)",
           cost: 750,
           id: 171,
           eventOnlyItem: false,
@@ -1617,7 +1617,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Spiritguard's Warplate",
+          name: "Spiritguard's Warplate (Silver)",
           cost: 750,
           id: 172,
           eventOnlyItem: false,
@@ -1625,7 +1625,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Green)",
           cost: 750,
           id: 173,
           eventOnlyItem: false,
@@ -1633,7 +1633,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Purple)",
           cost: 750,
           id: 174,
           eventOnlyItem: false,
@@ -1641,7 +1641,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Red)",
           cost: 750,
           id: 175,
           eventOnlyItem: false,
@@ -1649,7 +1649,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Yellow)",
           cost: 750,
           id: 176,
           eventOnlyItem: false,
@@ -1657,7 +1657,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Black)",
           cost: 2000,
           id: 177,
           eventOnlyItem: false,
@@ -1665,7 +1665,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Blue)",
           cost: 2000,
           id: 178,
           eventOnlyItem: false,
@@ -1673,7 +1673,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Green)",
           cost: 2000,
           id: 179,
           eventOnlyItem: false,
@@ -1681,7 +1681,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Red)",
           cost: 2000,
           id: 180,
           eventOnlyItem: false,
