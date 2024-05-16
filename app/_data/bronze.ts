@@ -1014,7 +1014,7 @@ const bronze: BronzeType = {
       id: 3,
       items: [
         {
-          name: "Breezebinder's Vestments",
+          name: "Breezebinder's Vestments (Original)",
           cost: 2500,
           id: 100,
           eventOnlyItem: false,
@@ -1022,7 +1022,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Breezebinder's Vestments",
+          name: "Breezebinder's Vestments (Purple)",
           cost: 2500,
           id: 101,
           eventOnlyItem: false,
@@ -1030,7 +1030,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Breezebinder's Vestments",
+          name: "Breezebinder's Vestments (Red)",
           cost: 2500,
           id: 102,
           eventOnlyItem: false,
@@ -1353,7 +1353,7 @@ const bronze: BronzeType = {
       id: 5,
       items: [
         {
-          name: "Spirit-Waker's Vestments",
+          name: "Spirit-Waker's Vestments (Blue)",
           cost: 750,
           id: 139,
           eventOnlyItem: false,
@@ -1361,7 +1361,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Spirit-Waker's Vestments",
+          name: "Spirit-Waker's Vestments (Green)",
           cost: 750,
           id: 140,
           eventOnlyItem: false,
@@ -1369,7 +1369,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Spirit-Waker's Vestments",
+          name: "Spirit-Waker's Vestments (Red)",
           cost: 750,
           id: 141,
           eventOnlyItem: false,
@@ -1377,7 +1377,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mistwalker's Vestments",
+          name: "Mistwalker's Vestments (Blue)",
           cost: 750,
           id: 142,
           eventOnlyItem: false,
@@ -1385,7 +1385,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mistwalker's Vestments",
+          name: "Mistwalker's Vestments (Original)",
           cost: 750,
           id: 143,
           eventOnlyItem: false,
@@ -1393,7 +1393,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Mistwalker's Vestments",
+          name: "Mistwalker's Vestments (White)",
           cost: 750,
           id: 144,
           eventOnlyItem: false,
@@ -1401,7 +1401,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Vestments of the Eternal Dynasty",
+          name: "Vestments of the Eternal Dynasty (Black)",
           cost: 2000,
           id: 145,
           eventOnlyItem: false,
@@ -1409,7 +1409,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Vestments of the Eternal Dynasty",
+          name: "Vestments of the Eternal Dynasty (Blue)",
           cost: 2000,
           id: 146,
           eventOnlyItem: false,
@@ -1417,7 +1417,7 @@ const bronze: BronzeType = {
           type: "cloth",
         },
         {
-          name: "Vestments of the Eternal Dynasty",
+          name: "Vestments of the Eternal Dynasty (Yellow)",
           cost: 2000,
           id: 147,
           eventOnlyItem: false,
