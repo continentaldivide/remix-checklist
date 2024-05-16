@@ -1094,7 +1094,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Swarmbreaker's Battleplate",
+          name: "Swarmbreaker's Battleplate (Dark)",
           cost: 2500,
           id: 110,
           eventOnlyItem: false,
@@ -1102,7 +1102,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Swarmbreaker's Battleplate",
+          name: "Swarmbreaker's Battleplate (Light)",
           cost: 2500,
           id: 111,
           eventOnlyItem: false,
@@ -1110,7 +1110,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Swarmbreaker's Battleplate",
+          name: "Swarmbreaker's Battleplate (Original)",
           cost: 2500,
           id: 112,
           eventOnlyItem: false,
@@ -1601,7 +1601,7 @@ const bronze: BronzeType = {
           type: "mail",
         },
         {
-          name: "Spiritguard's Warplate",
+          name: "Spiritguard's Warplate (Blue)",
           cost: 750,
           id: 170,
           eventOnlyItem: false,
@@ -1609,7 +1609,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Spiritguard's Warplate",
+          name: "Spiritguard's Warplate (Gold)",
           cost: 750,
           id: 171,
           eventOnlyItem: false,
@@ -1617,7 +1617,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Spiritguard's Warplate",
+          name: "Spiritguard's Warplate (Silver)",
           cost: 750,
           id: 172,
           eventOnlyItem: false,
@@ -1625,7 +1625,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Green)",
           cost: 750,
           id: 173,
           eventOnlyItem: false,
@@ -1633,7 +1633,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Purple)",
           cost: 750,
           id: 174,
           eventOnlyItem: false,
@@ -1641,7 +1641,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Red)",
           cost: 750,
           id: 175,
           eventOnlyItem: false,
@@ -1649,7 +1649,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Shan'ze Warplate",
+          name: "Shan'ze Warplate (Yellow)",
           cost: 750,
           id: 176,
           eventOnlyItem: false,
@@ -1657,7 +1657,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Black)",
           cost: 2000,
           id: 177,
           eventOnlyItem: false,
@@ -1665,7 +1665,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Blue)",
           cost: 2000,
           id: 178,
           eventOnlyItem: false,
@@ -1673,7 +1673,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Green)",
           cost: 2000,
           id: 179,
           eventOnlyItem: false,
@@ -1681,7 +1681,7 @@ const bronze: BronzeType = {
           type: "plate",
         },
         {
-          name: "Gatecrasher's Battleplate",
+          name: "Gatecrasher's Battleplate (Red)",
           cost: 2000,
           id: 180,
           eventOnlyItem: false,
