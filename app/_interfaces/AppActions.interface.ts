@@ -8,13 +8,23 @@ interface setVendorMap {
   vendorMap: Record<string, boolean>;
 }
 
+interface setIgnoredVendorMap {
+  type: "set ignoredVendorMap";
+  ignoredVendorMap: Record<string, boolean>;
+}
+
 interface setYPosition {
   type: "set YPosition";
   position: number;
 }
 
-interface toggleVendor {
-  type: "toggle vendor";
+interface toggleShowVendor {
+  type: "toggle show vendor";
+  id: number;
+}
+
+interface toggleIgnoreVendor {
+  type: "toggle ignore vendor";
   id: number;
 }
 
@@ -26,6 +36,8 @@ interface toggleChecked {
 export type AppActionsType =
   | setCheckedMap
   | setVendorMap
+  | setIgnoredVendorMap
   | setYPosition
-  | toggleVendor
+  | toggleShowVendor
+  | toggleIgnoreVendor
   | toggleChecked;
