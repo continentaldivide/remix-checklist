@@ -27,13 +27,24 @@ const appStateReducer: (
         ...state,
         yPosition: action.position,
       };
-    case "toggle vendor":
+    case "toggle show vendor":
       let newVendorMap = { ...state.closedVendorMap };
       newVendorMap[action.id] = !state.closedVendorMap[action.id];
       localStorage.setItem("vendorMap", JSON.stringify(newVendorMap));
       return {
         ...state,
         closedVendorMap: newVendorMap,
+      };
+    case "toggle ignore vendor":
+      let newIgnoredVendorMap = { ...state.ignoredVendorMap };
+      newIgnoredVendorMap[action.id] = !state.ignoredVendorMap[action.id];
+      localStorage.setItem(
+        "ignoredVendorMap",
+        JSON.stringify(newIgnoredVendorMap)
+      );
+      return {
+        ...state,
+        ignoredVendorMap: newIgnoredVendorMap,
       };
     case "toggle checked":
       let newCheckedMap = { ...state.checkedMap };
@@ -52,6 +63,7 @@ const initialState: AppStateType = {
   checkedMap: {},
   yPosition: 0,
   closedVendorMap: {},
+  ignoredVendorMap: {},
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {

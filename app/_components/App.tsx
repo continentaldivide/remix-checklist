@@ -9,22 +9,31 @@ export default function App() {
   const defaultMap: Record<string, boolean> = {};
   let bronzeTotal: number = 0;
 
-  const retrieveLocalMap = (mapName: "checkedMap" | "vendorMap") => {
+  const retrieveLocalMap = (
+    mapName: "checkedMap" | "vendorMap" | "ignoredVendorMap"
+  ) => {
     const localMap = localStorage.getItem(mapName);
     if (!localMap) {
       localStorage.setItem(mapName, JSON.stringify(defaultMap));
     } else {
       const parsedLocalMap: Record<string, boolean> = JSON.parse(localMap);
       //   ternary here is redundant but TS freaks out without it -- will revisit this later to try and understand the issue with my typing
-      mapName === "checkedMap"
-        ? appStateDispatch({
-            type: `set ${mapName}`,
-            [mapName]: parsedLocalMap,
-          })
-        : appStateDispatch({
-            type: `set ${mapName}`,
-            [mapName]: parsedLocalMap,
-          });
+      if (mapName === "checkedMap") {
+        appStateDispatch({
+          type: `set ${mapName}`,
+          [mapName]: parsedLocalMap,
+        });
+      } else if (mapName === "vendorMap") {
+        appStateDispatch({
+          type: `set ${mapName}`,
+          [mapName]: parsedLocalMap,
+        });
+      } else if (mapName === "ignoredVendorMap") {
+        appStateDispatch({
+          type: `set ${mapName}`,
+          [mapName]: parsedLocalMap,
+        });
+      }
     }
   };
 
@@ -35,13 +44,18 @@ export default function App() {
   useEffect(() => {
     retrieveLocalMap("checkedMap");
     retrieveLocalMap("vendorMap");
+    retrieveLocalMap("ignoredVendorMap");
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  bronzeTotal = useCalculateBronze(bronze, appState.checkedMap);
+  bronzeTotal = useCalculateBronze(
+    bronze,
+    appState.checkedMap,
+    appState.ignoredVendorMap
+  );
 
   const vendors = bronze.vendors.map((vendor, i) => {
     return <Vendor vendor={vendor} key={`vendor ${i}`} />;
