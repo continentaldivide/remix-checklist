@@ -9,7 +9,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     return <Item item={item} key={`item ${i}`} />;
   });
   return (
-    <div className="w-full rounded-md mb-2 cursor-pointer">
+    <div className="w-full px-12 rounded-md mb-2 cursor-pointer">
       {/* sticky element below is in a stacking context with item's <img> tag since it has a brightness property -- needs to have a z-index to keep the img from appearing on top */}
       <div
         className="sticky top-11 z-10"

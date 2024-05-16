@@ -48,10 +48,17 @@ export default function App() {
   });
 
   return (
-    <div className="flex min-h-screen flex-col items-center p-12 pb-20 lg:w-2/5 mx-auto">
+    <div className="flex min-h-screen flex-col items-center pb-20 lg:w-2/5 mx-auto">
       {/* z-positioning here needs to be higher than Vendor header so that Vendor header hides when it gets bumped off the screen by the next vendor */}
-      <h1 className="text-xl lg:text-3xl text-center p-2 z-20 w-full sticky top-0 bg-emerald-900">
-        total bronze required: {bronzeTotal}
+      <h1 className="text-xl lg:text-3xl text-center p-2 z-20 sticky min-w-full top-0 bg-emerald-900">
+        total{" "}
+        <img
+          height="24"
+          width="24"
+          src="/bronze.jpg"
+          className="inline rounded-md"
+        ></img>{" "}
+        required: {bronzeTotal}
       </h1>
       {vendors}
       {appState.yPosition === 0 ? null : (
@@ -63,7 +70,7 @@ export default function App() {
               position: 0,
             });
           }}
-          className="fixed bottom-4 min-w-[50%] lg:min-w-48 text-2xl p-2 bg-emerald-900/90 rounded-md z-20"
+          className="fixed bottom-4 min-w-[50%] lg:min-w-48 text-xl lg:text-2xl p-2 bg-emerald-900/90 rounded-md z-20"
         >
           back to top
         </button>
