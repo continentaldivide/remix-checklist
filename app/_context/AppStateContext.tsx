@@ -22,6 +22,11 @@ const appStateReducer: (
         ...state,
         closedVendorMap: { ...action.vendorMap },
       };
+    case "set ignoredVendorMap":
+      return {
+        ...state,
+        ignoredVendorMap: { ...action.ignoredVendorMap },
+      };
     case "set YPosition":
       return {
         ...state,
