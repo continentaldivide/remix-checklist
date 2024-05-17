@@ -71,6 +71,7 @@ export default function App() {
           width="24"
           src="/bronze.jpg"
           className="inline rounded-md"
+          alt="bronze coin"
         ></img>{" "}
         required: {bronzeTotal}
       </h1>

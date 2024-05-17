@@ -13,6 +13,7 @@ export default function Header() {
             height="24"
             width="24"
             src="https://cdn.simpleicons.org/buymeacoffee/CCCCCC/"
+            alt="Buy me a coffee"
           />
         </a>
         <a
@@ -24,6 +25,7 @@ export default function Header() {
             height="24"
             width="24"
             src="https://cdn.simpleicons.org/github/CCCCCC/"
+            alt="GitHub"
           />
         </a>
       </div>
