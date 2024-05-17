@@ -31,12 +31,13 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
               className="text-sm"
               onClick={(e) => {
                 e.stopPropagation();
-                !vendorIsClosed && !vendorIsIgnored
-                  ? appStateDispatch({
-                      type: "toggle show vendor",
-                      id: vendor.id,
-                    })
-                  : null;
+                // when we ignore the vendor, we want to take the extra step of collapsing its contents if they're currently showing.  We don't need to do the opposite when "un-ignoring" -- the user can manually click the vendor to open it.
+                if (!vendorIsClosed && !vendorIsIgnored) {
+                  appStateDispatch({
+                    type: "toggle show vendor",
+                    id: vendor.id,
+                  });
+                }
                 appStateDispatch({
                   type: "toggle ignore vendor",
                   id: vendor.id,
@@ -66,7 +67,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
         {/* This div hides the top corners of item components from peeking out behind the rounded top edges of vendor banners */}
         <div className="absolute top-0 left-0 -z-10 w-full bg-emerald-900 min-h-2"></div>
       </div>
-      {vendorIsIgnored ? null : vendorIsClosed ? null : items}
+      {vendorIsIgnored || vendorIsClosed ? null : items}
     </div>
   );
 }
