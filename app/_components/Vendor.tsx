@@ -43,7 +43,10 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
                 });
               }}
             >
-              <img src={vendorIsIgnored ? "eye-crossed-out.svg" : "eye.svg"} />
+              <img
+                src={vendorIsIgnored ? "eye-crossed-out.svg" : "eye.svg"}
+                alt={vendorIsIgnored ? "Crossed-out eye icon." : "Eye icon."}
+              />
             </button>
           </div>
           <div>
@@ -56,6 +59,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
           </div>
           <img
             src={vendorIsClosed ? "expand.svg" : "collapse.svg"}
+            alt={vendorIsClosed ? "Expand icon." : "Collapse icon."}
             className="min-w-8 min-h-8 rounded-md"
           />
         </div>
