@@ -3,4 +3,5 @@ export interface AppStateType {
   yPosition: number;
   closedVendorMap: Record<string, boolean>;
   ignoredVendorMap: Record<string, boolean>;
+  newsOpen: boolean;
 }

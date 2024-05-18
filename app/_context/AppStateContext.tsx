@@ -59,6 +59,11 @@ const appStateReducer: (
         ...state,
         checkedMap: newCheckedMap,
       };
+    case "toggle news":
+      return {
+        ...state,
+        newsOpen: !state.newsOpen,
+      };
     default:
       return state;
   }
@@ -69,6 +74,7 @@ const initialState: AppStateType = {
   yPosition: 0,
   closedVendorMap: {},
   ignoredVendorMap: {},
+  newsOpen: false,
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {
