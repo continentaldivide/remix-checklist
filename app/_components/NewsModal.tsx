@@ -1,18 +1,19 @@
 import { useEffect } from "react";
 import { useAppStateContext } from "../_context/AppStateContext";
+import packageInfo from "./../../package.json";
+console.log(packageInfo.version);
 
 export default function NewsModal() {
-  const { appState, appStateDispatch } = useAppStateContext();
-  const leaveModal = () => {
-    if (appState.newsOpen) {
-      appStateDispatch({ type: "toggle news" });
-    }
+  const { appStateDispatch } = useAppStateContext();
+  const closeModal = () => {
+    appStateDispatch({ type: "toggle news" });
+    localStorage.setItem("lastNewsVersion", packageInfo.version);
   };
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        leaveModal();
+        closeModal();
       }
     };
     document.addEventListener("keydown", handleEscape);
@@ -23,7 +24,7 @@ export default function NewsModal() {
     <div>
       <div
         className="fixed inset-0 bg-neutral-900/40 z-40"
-        onClick={leaveModal}
+        onClick={closeModal}
       ></div>
       <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-3/4 md:w-3/4 lg:w-1/3 bg-emerald-600 rounded-xl z-50 shadow-lg">
         <h1 className="bg-emerald-700 rounded-t-xl text-xl font-bold p-4">
@@ -40,7 +41,7 @@ export default function NewsModal() {
             <li>blue stuff</li>
           </ul>
           <button
-            onClick={leaveModal}
+            onClick={closeModal}
             className="px-4 py-1 text-lg font-semibold bg-emerald-400 hover:bg-emerald-500 active:bg-emerald-600 rounded-md"
           >
             thank you for news
