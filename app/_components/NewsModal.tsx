@@ -23,10 +23,10 @@ export default function NewsModal() {
   return (
     <div>
       <div
-        className="fixed inset-0 bg-neutral-900/40 z-40"
+        className="fixed inset-0 bg-neutral-900/40 z-40 animate-modal-bg-fade"
         onClick={closeModal}
       ></div>
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-3/4 md:w-3/4 lg:w-1/3 bg-emerald-600 rounded-xl z-50 shadow-lg">
+      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-3/4 md:w-3/4 lg:w-1/3 bg-emerald-600 rounded-xl z-50 shadow-lg animate-modal-appear">
         <h1 className="bg-emerald-700 rounded-t-xl text-xl font-bold p-4">
           hello it's the news
         </h1>
