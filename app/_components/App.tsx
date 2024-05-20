@@ -3,6 +3,7 @@ import Vendor from "../_components/Vendor";
 import { useEffect } from "react";
 import useCalculateBronze from "../_hooks/useCalculateBronze";
 import { useAppStateContext } from "../_context/AppStateContext";
+import NewsModal from "./NewsModal";
 
 export default function App() {
   const { appState, appStateDispatch } = useAppStateContext();
@@ -63,6 +64,7 @@ export default function App() {
 
   return (
     <div className="flex flex-col items-center pb-20 lg:w-2/5 mx-auto">
+      {appState.newsOpen ? <NewsModal /> : null}
       {/* z-positioning here needs to be higher than Vendor header so that Vendor header hides when it gets bumped off the screen by the next vendor */}
       <h1 className="text-xl lg:text-3xl text-center p-2 z-20 sticky min-h-11 lg:min-h-14 min-w-full top-0 bg-emerald-900">
         total{" "}
