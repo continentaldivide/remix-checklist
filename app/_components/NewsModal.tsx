@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAppStateContext } from "../_context/AppStateContext";
 import NewsItem from "./NewsItem";
 import packageInfo from "./../../package.json";
-console.log(packageInfo.version);
+import updates from "../_data/updates";
 
 export default function NewsModal() {
   const { appState, appStateDispatch } = useAppStateContext();
@@ -28,6 +28,10 @@ export default function NewsModal() {
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
+  const newsItems = updates.map((news, i) => {
+    return <NewsItem news={news} key={`newsItem ${i}`} />;
+  });
+
   return (
     <div>
       <div
@@ -39,15 +43,7 @@ export default function NewsModal() {
           hello it's the news
         </h1>
         <div className="flex flex-col gap-4 text-lg">
-          <div className="overflow-auto max-h-[60svh]">
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-            <NewsItem />
-          </div>
+          <div className="overflow-auto max-h-[60svh]">{newsItems}</div>
           <button
             onClick={closeModal}
             className="m-4 px-4 py-1 text-lg font-semibold bg-emerald-400 hover:bg-emerald-500 active:bg-emerald-600 rounded-md"
