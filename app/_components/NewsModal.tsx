@@ -27,18 +27,23 @@ export default function NewsModal() {
         className="fixed inset-0 bg-neutral-900/40 z-40 animate-modal-bg-fade"
         onClick={closeModal}
       ></div>
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-3/4 md:w-3/4 lg:w-1/3 max-h-[75%] bg-emerald-600 rounded-xl z-50 shadow-lg animate-modal-appear">
+      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 md:w-3/4 lg:w-1/3 bg-emerald-600 rounded-xl z-50 shadow-lg animate-modal-appear">
         <h1 className="bg-emerald-700 rounded-t-xl text-xl font-bold p-4">
           hello it's the news
         </h1>
-        <div className="flex flex-col gap-4 m-4 text-lg">
-          <div>
+        <div className="flex flex-col gap-4 text-lg">
+          <div className="overflow-auto max-h-[60svh]">
+            <NewsItem />
+            <NewsItem />
+            <NewsItem />
+            <NewsItem />
+            <NewsItem />
             <NewsItem />
             <NewsItem />
           </div>
           <button
             onClick={closeModal}
-            className="px-4 py-1 text-lg font-semibold bg-emerald-400 hover:bg-emerald-500 active:bg-emerald-600 rounded-md"
+            className="m-4 px-4 py-1 text-lg font-semibold bg-emerald-400 hover:bg-emerald-500 active:bg-emerald-600 rounded-md"
           >
             thank you for news
           </button>
