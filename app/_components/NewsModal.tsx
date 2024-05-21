@@ -5,11 +5,18 @@ import packageInfo from "./../../package.json";
 console.log(packageInfo.version);
 
 export default function NewsModal() {
-  const { appStateDispatch } = useAppStateContext();
+  const { appState, appStateDispatch } = useAppStateContext();
   const closeModal = () => {
     appStateDispatch({ type: "toggle news" });
     localStorage.setItem("lastNewsVersion", packageInfo.version);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = appState.newsOpen ? "hidden" : "unset";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [appState.newsOpen]);
 
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
