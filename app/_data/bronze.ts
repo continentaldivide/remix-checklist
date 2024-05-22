@@ -170,7 +170,7 @@ const bronze: BronzeType = {
           class: "rogue",
         },
         {
-          name: "Yuangol Slayer Battlegear",
+          name: "Yaungol Slayer Battlegear",
           cost: 5000,
           id: 18,
           eventOnlyItem: false,
@@ -474,7 +474,7 @@ const bronze: BronzeType = {
           class: "rogue",
         },
         {
-          name: "Yuangol Slayer Battlegear",
+          name: "Yaungol Slayer Battlegear",
           cost: 5000,
           id: 51,
           eventOnlyItem: false,
@@ -734,7 +734,7 @@ const bronze: BronzeType = {
           class: "rogue",
         },
         {
-          name: "Yuangol Slayer Battlegear",
+          name: "Yaungol Slayer Battlegear",
           cost: 5000,
           id: 79,
           eventOnlyItem: false,
