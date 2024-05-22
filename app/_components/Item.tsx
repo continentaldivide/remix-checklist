@@ -17,7 +17,7 @@ export default function Item({ item }: { item: ItemType }) {
       </div>
       {item.wowheadId ? (
         <div
-          className="relative mx-2 shrink-0 size-8 lg:size-12 my-auto"
+          className="relative mx-2 shrink-0 size-10 lg:size-12 my-auto"
           onClick={(e) => {
             e.stopPropagation();
           }}
@@ -25,16 +25,10 @@ export default function Item({ item }: { item: ItemType }) {
           <a
             href={`https://wowhead.com/item=${item.wowheadId}`}
             target="_blank"
-          >
-            <img
-              src="wowhead-small.png"
-              alt="Link to Wowhead item page."
-              className="rounded-md"
-            />
-          </a>
+          />
         </div>
       ) : null}
-      <div className="relative shrink-0 size-8 lg:size-12 my-auto">
+      <div className="relative shrink-0 size-10 lg:size-10 my-auto">
         <img
           src="bronze.jpg"
           alt="Icon for MOP Remix Bronze currency."
@@ -51,7 +45,7 @@ export default function Item({ item }: { item: ItemType }) {
         readOnly
         // operation below works fine without the OR condition, but makes react throw an error if checkedMap[item.id] produces a falsy value instead of a bool
         checked={appState.checkedMap[item.id] || false}
-        className="size-8 lg:size-12 mx-2 my-auto text-emerald-900 rounded-md cursor-pointer"
+        className="size-10 lg:size-10 mx-2 my-auto text-emerald-900 rounded-md cursor-pointer"
       />
     </div>
   );
