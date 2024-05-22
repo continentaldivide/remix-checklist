@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { useAppStateContext } from "../_context/AppStateContext";
 import NewsItem from "./NewsItem";
-import packageInfo from "./../../package.json";
 import updates from "../_data/updates";
 
 export default function NewsModal() {
   const { appState, appStateDispatch } = useAppStateContext();
   const closeModal = () => {
     appStateDispatch({ type: "toggle news" });
-    localStorage.setItem("lastNewsVersion", packageInfo.version);
   };
 
   useEffect(() => {

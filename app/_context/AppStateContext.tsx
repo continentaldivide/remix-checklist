@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, ReactNode } from "react";
 import { AppStateType } from "../_interfaces/AppState.interface";
 import { AppActionsType } from "../_interfaces/AppActions.interface";
+import packageInfo from "./../../package.json";
 
 const AppStateContext = createContext<
   | { appState: AppStateType; appStateDispatch: React.Dispatch<AppActionsType> }
@@ -75,6 +76,7 @@ const initialState: AppStateType = {
   closedVendorMap: {},
   ignoredVendorMap: {},
   newsOpen: false,
+  currentVersion: packageInfo.version,
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {

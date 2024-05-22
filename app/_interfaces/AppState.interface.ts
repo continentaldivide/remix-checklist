@@ -4,4 +4,5 @@ export interface AppStateType {
   closedVendorMap: Record<string, boolean>;
   ignoredVendorMap: Record<string, boolean>;
   newsOpen: boolean;
+  currentVersion: string;
 }
