@@ -3,7 +3,8 @@ import { useAppStateContext } from "../_context/AppStateContext";
 export default function Header() {
   const { appState, appStateDispatch } = useAppStateContext();
   const allNewsSeen =
-    appState.currentVersion === localStorage.getItem("lastNewsVersion");
+    appState.currentVersion ===
+    global?.window?.localStorage?.getItem("lastNewsVersion");
 
   return (
     <div className="bg-emerald-950 min-h-12 px-4 flex justify-between items-center">
