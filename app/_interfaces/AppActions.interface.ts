@@ -32,6 +32,9 @@ interface toggleChecked {
   type: "toggle checked";
   id: number;
 }
+interface toggleNews {
+  type: "toggle news";
+}
 
 export type AppActionsType =
   | setCheckedMap
@@ -40,4 +43,5 @@ export type AppActionsType =
   | setYPosition
   | toggleShowVendor
   | toggleIgnoreVendor
-  | toggleChecked;
+  | toggleChecked
+  | toggleNews;
