@@ -3,6 +3,16 @@ export interface AppStateType {
   yPosition: number;
   closedVendorMap: Record<string, boolean>;
   ignoredVendorMap: Record<string, boolean>;
+  ignoredItems: IgnoredItemsType;
   newsOpen: boolean;
   currentVersion: string;
+}
+
+export interface IgnoredItemsType {
+  vendors?: Record<string, boolean>;
+  classes?: Record<string, boolean>;
+  mounts: boolean;
+  armor: boolean;
+  toys: boolean;
+  nonEvent: boolean;
 }

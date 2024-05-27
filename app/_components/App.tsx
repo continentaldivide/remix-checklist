@@ -55,7 +55,8 @@ export default function App() {
   bronzeTotal = useCalculateBronze(
     bronze,
     appState.checkedMap,
-    appState.ignoredVendorMap
+    appState.ignoredVendorMap,
+    appState.ignoredItems
   );
 
   const vendors = bronze.vendors.map((vendor, i) => {

@@ -65,6 +65,14 @@ const appStateReducer: (
         ...state,
         newsOpen: !state.newsOpen,
       };
+    case "toggle ignore":
+      return {
+        ...state,
+        ignoredItems: {
+          ...state.ignoredItems,
+          [action.category]: !state.ignoredItems[action.category],
+        },
+      };
     default:
       return state;
   }
@@ -75,6 +83,12 @@ const initialState: AppStateType = {
   yPosition: 0,
   closedVendorMap: {},
   ignoredVendorMap: {},
+  ignoredItems: {
+    mounts: false,
+    toys: false,
+    armor: false,
+    nonEvent: false,
+  },
   newsOpen: false,
   currentVersion: packageInfo.version,
 };

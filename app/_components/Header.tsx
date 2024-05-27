@@ -8,9 +8,17 @@ export default function Header() {
 
   return (
     <div className="bg-emerald-950 min-h-12 px-4 flex justify-between items-center">
-      <div className="min-w-20"></div>
+      <div className="w-20 border border-pink-300">
+        <button
+          onClick={() => {
+            appStateDispatch({ type: "toggle ignore", category: "nonEvent" });
+          }}
+        >
+          only event exclusives
+        </button>
+      </div>
       <h1 className="text-xl lg:text-2xl font-bold">Remix Checklist</h1>
-      <div className="min-w-20 flex gap-2 justify-end">
+      <div className="w-20 flex gap-2 justify-end">
         <button
           onClick={() => {
             appStateDispatch({ type: "toggle news" });

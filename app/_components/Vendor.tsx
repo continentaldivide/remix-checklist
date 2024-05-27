@@ -7,8 +7,20 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
   const vendorIsClosed = appState.closedVendorMap[vendor.id];
   const vendorIsIgnored = appState.ignoredVendorMap[vendor.id];
   const items = vendor.items.map((item, i) => {
+    if (!item.eventOnlyItem && appState.ignoredItems.nonEvent) {
+      return;
+    }
     return <Item item={item} key={`item ${i}`} />;
   });
+
+  const definedItems = items.filter((item) => {
+    return item !== undefined;
+  });
+
+  if (definedItems.length === 0) {
+    return;
+  }
+
   return (
     <div className="w-full px-12 rounded-md mb-2 cursor-pointer">
       {/* sticky element below is in a stacking context with item's <img> tag since it has a brightness property -- needs to have a z-index to keep the img from appearing on top */}
@@ -67,7 +79,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
         {/* This div hides the top corners of item components from peeking out behind the rounded top edges of vendor banners */}
         <div className="absolute top-0 left-0 -z-10 w-full bg-emerald-900 min-h-2"></div>
       </div>
-      {vendorIsIgnored || vendorIsClosed ? null : items}
+      {vendorIsIgnored || vendorIsClosed ? null : definedItems}
     </div>
   );
 }

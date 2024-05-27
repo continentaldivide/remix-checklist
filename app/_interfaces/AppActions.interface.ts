@@ -32,8 +32,15 @@ interface toggleChecked {
   type: "toggle checked";
   id: number;
 }
+
 interface toggleNews {
   type: "toggle news";
+}
+
+interface toggleIgnore {
+  type: "toggle ignore";
+  // as currently implemented, these category options MUST match the props of appState.ignoredMap!
+  category: "nonEvent" | "armor" | "mounts" | "toys";
 }
 
 export type AppActionsType =
@@ -44,4 +51,5 @@ export type AppActionsType =
   | toggleShowVendor
   | toggleIgnoreVendor
   | toggleChecked
-  | toggleNews;
+  | toggleNews
+  | toggleIgnore;
