@@ -1,8 +1,10 @@
-import {render} from '@testing-library/react'
+import { render } from '@testing-library/react'
+import '@testing-library/jest-dom'
 import Header from '../../app/_components/Header'
 
 describe('Header.tsx', () => {
     test('renders', () => {
-        expect(1).toEqual(1)
+        const { asFragment, getByText } = render(<Header />)
+        expect(getByText("Remix Checklist")).toBeInTheDocument()
     })
 })
