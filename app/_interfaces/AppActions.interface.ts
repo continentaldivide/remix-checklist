@@ -13,6 +13,11 @@ interface setIgnoredVendorMap {
   ignoredVendorMap: Record<string, boolean>;
 }
 
+interface setLastNewsVersion {
+  type: "set lastNewsVersion";
+  version: string;
+}
+
 interface setYPosition {
   type: "set YPosition";
   position: number;
@@ -35,6 +40,7 @@ interface toggleChecked {
 
 interface toggleNews {
   type: "toggle news";
+  openOrClose: "open" | "close";
 }
 
 interface toggleIgnore {
@@ -47,6 +53,7 @@ export type AppActionsType =
   | setCheckedMap
   | setVendorMap
   | setIgnoredVendorMap
+  | setLastNewsVersion
   | setYPosition
   | toggleShowVendor
   | toggleIgnoreVendor

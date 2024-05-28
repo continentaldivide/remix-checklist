@@ -6,6 +6,7 @@ export interface AppStateType {
   ignoredItems: IgnoredItemsType;
   newsOpen: boolean;
   currentVersion: string;
+  lastNewsVersion: string;
 }
 
 export interface IgnoredItemsType {

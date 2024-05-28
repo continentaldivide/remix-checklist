@@ -46,6 +46,8 @@ export default function App() {
     retrieveLocalMap("checkedMap");
     retrieveLocalMap("vendorMap");
     retrieveLocalMap("ignoredVendorMap");
+    const lastNewsVersion = localStorage.getItem("lastNewsVersion") || "";
+    appStateDispatch({ type: "set lastNewsVersion", version: lastNewsVersion });
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

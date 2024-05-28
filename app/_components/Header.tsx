@@ -1,10 +1,17 @@
+import { useState, useEffect } from "react";
 import { useAppStateContext } from "../_context/AppStateContext";
 
 export default function Header() {
+  const [newsIconStyle, setNewsIconStyle] = useState("");
   const { appState, appStateDispatch } = useAppStateContext();
-  const allNewsSeen =
-    appState.currentVersion ===
-    global?.window?.localStorage?.getItem("lastNewsVersion");
+
+  useEffect(() => {
+    if (appState.currentVersion !== appState.lastNewsVersion) {
+      setNewsIconStyle("animate-pulse");
+    } else {
+      setNewsIconStyle("");
+    }
+  }, [appState.lastNewsVersion]);
 
   return (
     <div className="bg-emerald-950 min-h-12 px-4 flex justify-between items-center">
@@ -21,12 +28,13 @@ export default function Header() {
       <div className="w-20 flex gap-2 justify-end">
         <button
           onClick={() => {
-            appStateDispatch({ type: "toggle news" });
-            localStorage.setItem("lastNewsVersion", appState.currentVersion);
+            appStateDispatch({ type: "toggle news", openOrClose: "open" });
+            appStateDispatch({
+              type: "set lastNewsVersion",
+              version: appState.currentVersion,
+            });
           }}
-          className={`my-auto hover:brightness-125 ${
-            allNewsSeen ? null : `animate-pulse`
-          }`}
+          className={`my-auto hover:brightness-125 ${newsIconStyle}`}
         >
           <img height="24" width="24" src="news.svg" alt="News icon" />
         </button>

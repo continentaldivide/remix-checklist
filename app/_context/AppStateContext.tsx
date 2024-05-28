@@ -28,6 +28,11 @@ const appStateReducer: (
         ...state,
         ignoredVendorMap: { ...action.ignoredVendorMap },
       };
+    case "set lastNewsVersion":
+      return {
+        ...state,
+        lastNewsVersion: action.version,
+      };
     case "set YPosition":
       return {
         ...state,
@@ -61,6 +66,9 @@ const appStateReducer: (
         checkedMap: newCheckedMap,
       };
     case "toggle news":
+      if (action.openOrClose === "open") {
+        localStorage.setItem("lastNewsVersion", state.currentVersion);
+      }
       return {
         ...state,
         newsOpen: !state.newsOpen,
@@ -91,6 +99,7 @@ const initialState: AppStateType = {
   },
   newsOpen: false,
   currentVersion: packageInfo.version,
+  lastNewsVersion: "",
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {
