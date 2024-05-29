@@ -73,6 +73,11 @@ const appStateReducer: (
         ...state,
         newsOpen: !state.newsOpen,
       };
+    case "toggle menu":
+      return {
+        ...state,
+        menuOpen: !state.menuOpen,
+      };
     case "toggle ignore":
       return {
         ...state,
@@ -98,6 +103,7 @@ const initialState: AppStateType = {
     nonEvent: false,
   },
   newsOpen: false,
+  menuOpen: false,
   currentVersion: packageInfo.version,
   lastNewsVersion: "",
 };

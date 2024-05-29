@@ -5,6 +5,7 @@ export interface AppStateType {
   ignoredVendorMap: Record<string, boolean>;
   ignoredItems: IgnoredItemsType;
   newsOpen: boolean;
+  menuOpen: boolean;
   currentVersion: string;
   lastNewsVersion: string;
 }

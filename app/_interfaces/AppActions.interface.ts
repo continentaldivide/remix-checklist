@@ -43,6 +43,10 @@ interface toggleNews {
   openOrClose: "open" | "close";
 }
 
+interface toggleMenu {
+  type: "toggle menu";
+}
+
 interface toggleIgnore {
   type: "toggle ignore";
   // as currently implemented, these category options MUST match the props of appState.ignoredMap!
@@ -59,4 +63,5 @@ export type AppActionsType =
   | toggleIgnoreVendor
   | toggleChecked
   | toggleNews
+  | toggleMenu
   | toggleIgnore;
