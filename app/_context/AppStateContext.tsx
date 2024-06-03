@@ -101,6 +101,7 @@ const initialState: AppStateType = {
     toys: false,
     armor: false,
     nonEvent: false,
+    obtained: false,
   },
   newsOpen: false,
   menuOpen: false,

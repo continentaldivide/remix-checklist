@@ -17,4 +17,5 @@ export interface IgnoredItemsType {
   armor: boolean;
   toys: boolean;
   nonEvent: boolean;
+  obtained: boolean;
 }

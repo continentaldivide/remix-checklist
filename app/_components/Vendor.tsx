@@ -10,6 +10,9 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
     if (!item.eventOnlyItem && appState.ignoredItems.nonEvent) {
       return;
     }
+    if (appState.checkedMap[item.id] && appState.ignoredItems.obtained) {
+      return;
+    }
     return <Item item={item} key={`item ${i}`} />;
   });
 
