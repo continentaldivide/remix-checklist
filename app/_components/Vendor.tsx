@@ -1,28 +1,13 @@
-import Item from "./Item";
 import { VendorType } from "../_interfaces/Bronze.interface";
 import { useAppStateContext } from "../_context/AppStateContext";
+import useFilterItems from "../_hooks/useFilterItems";
 
 export default function Vendor({ vendor }: { vendor: VendorType }) {
   const { appState, appStateDispatch } = useAppStateContext();
   const vendorIsClosed = appState.closedVendorMap[vendor.id];
   const vendorIsIgnored = appState.ignoredVendorMap[vendor.id];
-  const items = vendor.items.map((item, i) => {
-    if (!item.eventOnlyItem && appState.ignoredItems.nonEvent) {
-      return;
-    }
-    if (appState.checkedMap[item.id] && appState.ignoredItems.obtained) {
-      return;
-    }
-    return <Item item={item} key={`item ${i}`} />;
-  });
 
-  const definedItems = items.filter((item) => {
-    return item !== undefined;
-  });
-
-  if (definedItems.length === 0) {
-    return;
-  }
+  const itemComponents = useFilterItems(vendor.items);
 
   return (
     <div className="w-full px-12 rounded-md mb-2 cursor-pointer">
@@ -82,7 +67,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
         {/* This div hides the top corners of item components from peeking out behind the rounded top edges of vendor banners */}
         <div className="absolute top-0 left-0 -z-10 w-full bg-emerald-900 min-h-2"></div>
       </div>
-      {vendorIsIgnored || vendorIsClosed ? null : definedItems}
+      {vendorIsIgnored || vendorIsClosed ? null : itemComponents}
     </div>
   );
 }
