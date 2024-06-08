@@ -1,7 +1,8 @@
+import SwitchComponent from "./SwitchComponent";
 import { useAppStateContext } from "../_context/AppStateContext";
 
 export default function Menu() {
-  const { appStateDispatch } = useAppStateContext();
+  const { appState, appStateDispatch } = useAppStateContext();
   return (
     <div className="absolute top-12 left-0 z-50">
       <div className="odd:bg-gray-600 even:bg-gray-700 flex justify-between items-center">
@@ -12,9 +13,14 @@ export default function Menu() {
           }}
           className="my-auto hover:brightness-125"
         >
-          toggle non event exclusives
+          show only event exclusives
         </button>
-        <input type="checkbox" />
+        <SwitchComponent
+          checked={appState.ignoredItems.nonEvent}
+          onChange={() => {
+            appStateDispatch({ type: "toggle ignore", category: "nonEvent" });
+          }}
+        />
       </div>
       <div className="odd:bg-gray-600 even:bg-gray-700 flex justify-between items-center">
         <button
@@ -26,7 +32,12 @@ export default function Menu() {
         >
           Hide checked items
         </button>
-        <input type="checkbox" />
+        <SwitchComponent
+          checked={appState.ignoredItems.obtained}
+          onChange={() => {
+            appStateDispatch({ type: "toggle ignore", category: "obtained" });
+          }}
+        />
       </div>
     </div>
   );
