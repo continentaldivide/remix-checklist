@@ -8,7 +8,7 @@ type Props = {
 
 export default function MenuOption({ checked, label, dispatch }: Props) {
   return (
-    <div className="bg-emerald-950 flex justify-between items-center first:rounded-t-md last:rounded-b-md">
+    <div className="bg-emerald-950 flex justify-between gap-2 items-center first:rounded-t-md last:rounded-b-md p-2">
       <button
         onClick={(e) => {
           e.stopPropagation();
