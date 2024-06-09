@@ -28,6 +28,11 @@ const appStateReducer: (
         ...state,
         ignoredVendorMap: { ...action.ignoredVendorMap },
       };
+    case "set lastNewsVersion":
+      return {
+        ...state,
+        lastNewsVersion: action.version,
+      };
     case "set YPosition":
       return {
         ...state,
@@ -61,9 +66,25 @@ const appStateReducer: (
         checkedMap: newCheckedMap,
       };
     case "toggle news":
+      if (action.openOrClose === "open") {
+        localStorage.setItem("lastNewsVersion", state.currentVersion);
+      }
       return {
         ...state,
         newsOpen: !state.newsOpen,
+      };
+    case "toggle menu":
+      return {
+        ...state,
+        menuOpen: !state.menuOpen,
+      };
+    case "toggle ignore":
+      return {
+        ...state,
+        ignoredItems: {
+          ...state.ignoredItems,
+          [action.category]: !state.ignoredItems[action.category],
+        },
       };
     default:
       return state;
@@ -75,8 +96,17 @@ const initialState: AppStateType = {
   yPosition: 0,
   closedVendorMap: {},
   ignoredVendorMap: {},
+  ignoredItems: {
+    mounts: false,
+    toys: false,
+    armor: false,
+    nonEvent: false,
+    obtained: false,
+  },
   newsOpen: false,
+  menuOpen: false,
   currentVersion: packageInfo.version,
+  lastNewsVersion: "",
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {

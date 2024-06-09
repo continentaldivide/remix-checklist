@@ -6,7 +6,7 @@ import updates from "../_data/updates";
 export default function NewsModal() {
   const { appState, appStateDispatch } = useAppStateContext();
   const closeModal = () => {
-    appStateDispatch({ type: "toggle news" });
+    appStateDispatch({ type: "toggle news", openOrClose: "close" });
   };
 
   useEffect(() => {
