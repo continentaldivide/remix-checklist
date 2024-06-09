@@ -2130,6 +2130,20 @@ const bronze: BronzeType = {
       id: 7,
       items: [
         {
+          name: "Mini Mana Bomb",
+          cost: 500,
+          id: 257,
+          eventOnlyItem: true,
+          wowheadId: 89205,
+        },
+        {
+          name: "Theramore Tabard",
+          cost: 500,
+          id: 276,
+          eventOnlyItem: true,
+          wowheadId: 89196,
+        },
+        {
           name: "Odd Polished Stone",
           cost: 2200,
           id: 236,
@@ -2275,13 +2289,6 @@ const bronze: BronzeType = {
           id: 256,
           eventOnlyItem: false,
           wowheadId: 104309,
-        },
-        {
-          name: "Mini Mana Bomb",
-          cost: 50000,
-          id: 257,
-          eventOnlyItem: true,
-          wowheadId: 89205,
         },
       ],
     },
