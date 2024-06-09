@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Remix Checklist",
     description: "Keep track of your rewards in Mists of Pandaria: Remix",
+    images: [
+      {
+        url: "/thumbnail.png",
+      },
+    ],
   },
 };
 
