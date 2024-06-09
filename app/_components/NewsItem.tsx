@@ -18,9 +18,7 @@ export default function NewsItem({
       <h1 className="text-xl mb-2">
         {news.version} released on {news.releaseDate}
       </h1>
-      <ul className="list-disc list-inside leading-relaxed">
-        {changes}
-      </ul>
+      <ul className="list-disc list-inside leading-relaxed">{changes}</ul>
     </div>
   );
 }
