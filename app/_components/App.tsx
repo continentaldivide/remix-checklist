@@ -2,59 +2,26 @@ import bronze from "../_data/bronze";
 import Vendor from "../_components/Vendor";
 import { useEffect } from "react";
 import useCalculateBronze from "../_hooks/useCalculateBronze";
+import useGetLocalState from "../_hooks/useGetLocalState";
 import { useAppStateContext } from "../_context/AppStateContext";
 import NewsModal from "./NewsModal";
 
 export default function App() {
   const { appState, appStateDispatch } = useAppStateContext();
-  const defaultMap: Record<string, boolean> = {};
-  let bronzeTotal: number = 0;
 
-  const retrieveLocalMap = (
-    mapName: "checkedMap" | "vendorMap" | "ignoredVendorMap"
-  ) => {
-    const localMap = localStorage.getItem(mapName);
-    if (!localMap) {
-      localStorage.setItem(mapName, JSON.stringify(defaultMap));
-    } else {
-      const parsedLocalMap: Record<string, boolean> = JSON.parse(localMap);
-      //   ternary here is redundant but TS freaks out without it -- will revisit this later to try and understand the issue with my typing
-      if (mapName === "checkedMap") {
-        appStateDispatch({
-          type: `set ${mapName}`,
-          [mapName]: parsedLocalMap,
-        });
-      } else if (mapName === "vendorMap") {
-        appStateDispatch({
-          type: `set ${mapName}`,
-          [mapName]: parsedLocalMap,
-        });
-      } else if (mapName === "ignoredVendorMap") {
-        appStateDispatch({
-          type: `set ${mapName}`,
-          [mapName]: parsedLocalMap,
-        });
-      }
-    }
-  };
-
-  const handleScroll = () => {
-    appStateDispatch({ type: "set YPosition", position: window.scrollY });
-  };
+  useGetLocalState();
 
   useEffect(() => {
-    retrieveLocalMap("checkedMap");
-    retrieveLocalMap("vendorMap");
-    retrieveLocalMap("ignoredVendorMap");
-    const lastNewsVersion = localStorage.getItem("lastNewsVersion") || "";
-    appStateDispatch({ type: "set lastNewsVersion", version: lastNewsVersion });
+    const handleScroll = () => {
+      appStateDispatch({ type: "set YPosition", position: window.scrollY });
+    };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  bronzeTotal = useCalculateBronze(
+  let bronzeTotal = useCalculateBronze(
     bronze,
     appState.checkedMap,
     appState.ignoredVendorMap,
