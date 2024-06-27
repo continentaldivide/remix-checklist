@@ -1,9 +1,17 @@
 import { useAppStateContext } from "../_context/AppStateContext";
 import { useEffect } from "react";
+import { IgnoredItemsType } from "../_interfaces/AppState.interface";
 
 export default function useGetLocalState() {
   const { appStateDispatch } = useAppStateContext();
   const defaultMap: Record<string, boolean> = {};
+  const defaultIgnoredItems: IgnoredItemsType = {
+    mounts: false,
+    toys: false,
+    armor: false,
+    nonEvent: false,
+    obtained: false,
+  };
 
   const retrieveLocalMap = (
     mapName: "checkedMap" | "vendorMap" | "ignoredVendorMap"
@@ -21,11 +29,24 @@ export default function useGetLocalState() {
       });
     }
   };
+
   useEffect(() => {
     retrieveLocalMap("checkedMap");
     retrieveLocalMap("vendorMap");
     retrieveLocalMap("ignoredVendorMap");
+
     const lastNewsVersion = localStorage.getItem("lastNewsVersion") || "";
     appStateDispatch({ type: "set lastNewsVersion", version: lastNewsVersion });
+
+    const localIgnored = localStorage.getItem("ignoredItems");
+    if (!localIgnored) {
+      localStorage.setItem("ignoredItems", JSON.stringify(defaultIgnoredItems));
+    } else {
+      const parsedLocalIgnored: IgnoredItemsType = JSON.parse(localIgnored);
+      appStateDispatch({
+        type: "set ignoredItems",
+        ignoredItems: parsedLocalIgnored,
+      });
+    }
   }, []);
 }

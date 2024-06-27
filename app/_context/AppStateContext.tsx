@@ -34,6 +34,11 @@ const appStateReducer: (
         ...state,
         lastNewsVersion: action.version,
       };
+    case "set ignoredItems":
+      return {
+        ...state,
+        ignoredItems: action.ignoredItems,
+      };
     case "set YPosition":
       return {
         ...state,
