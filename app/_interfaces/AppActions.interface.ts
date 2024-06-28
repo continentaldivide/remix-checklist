@@ -1,3 +1,5 @@
+import { IgnoredItemsType } from "./AppState.interface";
+
 interface setCheckedMap {
   type: "set checkedMap";
   checkedMap: Record<string, boolean>;
@@ -16,6 +18,11 @@ interface setIgnoredVendorMap {
 interface setLastNewsVersion {
   type: "set lastNewsVersion";
   version: string;
+}
+
+interface setIgnoredItems {
+  type: "set ignoredItems";
+  ignoredItems: IgnoredItemsType;
 }
 
 interface setYPosition {
@@ -58,6 +65,7 @@ export type AppActionsType =
   | setVendorMap
   | setIgnoredVendorMap
   | setLastNewsVersion
+  | setIgnoredItems
   | setYPosition
   | toggleShowVendor
   | toggleIgnoreVendor
