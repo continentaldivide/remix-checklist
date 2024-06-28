@@ -46,8 +46,8 @@ export default function Item({ item }: { item: ItemType }) {
       </div>
       <input
         type="checkbox"
-        name="checkbox for {item.name}"
-        id=""
+        name={`checkbox for ${item.name}`}
+        id={item.id.toString()}
         readOnly
         // operation below works fine without the OR condition, but makes react throw an error if checkedMap[item.id] produces a falsy value instead of a bool
         checked={appState.checkedMap[item.id] || false}

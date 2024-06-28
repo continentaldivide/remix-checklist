@@ -1,8 +1,8 @@
 "use client";
 
 import { AppStateContextProvider } from "./_context/AppStateContext";
-import App from "./_components/App";
 import Header from "./_components/Header";
+import App from "./_components/App";
 
 export default function Home() {
   return (

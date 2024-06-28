@@ -1,3 +1,5 @@
+import { IgnoredItemsType } from "./AppState.interface";
+
 interface setCheckedMap {
   type: "set checkedMap";
   checkedMap: Record<string, boolean>;
@@ -11,6 +13,16 @@ interface setVendorMap {
 interface setIgnoredVendorMap {
   type: "set ignoredVendorMap";
   ignoredVendorMap: Record<string, boolean>;
+}
+
+interface setLastNewsVersion {
+  type: "set lastNewsVersion";
+  version: string;
+}
+
+interface setIgnoredItems {
+  type: "set ignoredItems";
+  ignoredItems: IgnoredItemsType;
 }
 
 interface setYPosition {
@@ -33,11 +45,31 @@ interface toggleChecked {
   id: number;
 }
 
+interface toggleNews {
+  type: "toggle news";
+  openOrClose: "open" | "close";
+}
+
+interface toggleMenu {
+  type: "toggle menu";
+}
+
+interface toggleIgnore {
+  type: "toggle ignore";
+  // as currently implemented, these category options MUST match the props of appState.ignoredMap!
+  category: "nonEvent" | "armor" | "mounts" | "toys" | "obtained";
+}
+
 export type AppActionsType =
   | setCheckedMap
   | setVendorMap
   | setIgnoredVendorMap
+  | setLastNewsVersion
+  | setIgnoredItems
   | setYPosition
   | toggleShowVendor
   | toggleIgnoreVendor
-  | toggleChecked;
+  | toggleChecked
+  | toggleNews
+  | toggleMenu
+  | toggleIgnore;

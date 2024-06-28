@@ -1,6 +1,6 @@
 {
   "name": "remix-checklist",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.0.4",
     "@vercel/analytics": "^1.2.2",
     "next": "14.2.1",
     "react": "^18",

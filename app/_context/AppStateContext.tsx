@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useReducer, ReactNode } from "react";
 import { AppStateType } from "../_interfaces/AppState.interface";
 import { AppActionsType } from "../_interfaces/AppActions.interface";
+import packageInfo from "./../../package.json";
 
 const AppStateContext = createContext<
   | { appState: AppStateType; appStateDispatch: React.Dispatch<AppActionsType> }
@@ -26,6 +27,17 @@ const appStateReducer: (
       return {
         ...state,
         ignoredVendorMap: { ...action.ignoredVendorMap },
+      };
+    case "set lastNewsVersion":
+      // this piece of information needs to be persistent, so it's a little unintuitive that saving it to localStorage doesn't occur in this action and instead occurs in case "toggle news".  On revisiting this code, my intuition is that these cases should be able to be combined.  Can't do that right now but will try to come back soon.
+      return {
+        ...state,
+        lastNewsVersion: action.version,
+      };
+    case "set ignoredItems":
+      return {
+        ...state,
+        ignoredItems: action.ignoredItems,
       };
     case "set YPosition":
       return {
@@ -59,6 +71,34 @@ const appStateReducer: (
         ...state,
         checkedMap: newCheckedMap,
       };
+    case "toggle news":
+      if (action.openOrClose === "open") {
+        localStorage.setItem("lastNewsVersion", state.currentVersion);
+      }
+      return {
+        ...state,
+        newsOpen: !state.newsOpen,
+      };
+    case "toggle menu":
+      return {
+        ...state,
+        menuOpen: !state.menuOpen,
+      };
+    case "toggle ignore":
+      localStorage.setItem(
+        "ignoredItems",
+        JSON.stringify({
+          ...state.ignoredItems,
+          [action.category]: !state.ignoredItems[action.category],
+        })
+      );
+      return {
+        ...state,
+        ignoredItems: {
+          ...state.ignoredItems,
+          [action.category]: !state.ignoredItems[action.category],
+        },
+      };
     default:
       return state;
   }
@@ -69,6 +109,17 @@ const initialState: AppStateType = {
   yPosition: 0,
   closedVendorMap: {},
   ignoredVendorMap: {},
+  ignoredItems: {
+    mounts: false,
+    toys: false,
+    armor: false,
+    nonEvent: false,
+    obtained: false,
+  },
+  newsOpen: false,
+  menuOpen: false,
+  currentVersion: packageInfo.version,
+  lastNewsVersion: "",
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {
