@@ -47,24 +47,14 @@ export default function Header() {
           href="https://buymeacoffee.com/continentaldivide"
           className="my-auto hover:brightness-125"
         >
-          <img
-            height="24"
-            width="24"
-            src="https://cdn.simpleicons.org/buymeacoffee/cccccc/"
-            alt="Buy me a coffee"
-          />
+          <img height="24" width="24" src="./BMAC.svg" alt="Buy me a coffee" />
         </a>
         <a
           target="_blank"
           href="https://github.com/continentaldivide/remix-checklist"
           className="my-auto hover:brightness-125"
         >
-          <img
-            height="24"
-            width="24"
-            src="https://cdn.simpleicons.org/github/cccccc/"
-            alt="GitHub"
-          />
+          <img height="24" width="24" src="./github.svg" alt="GitHub" />
         </a>
       </div>
     </div>
