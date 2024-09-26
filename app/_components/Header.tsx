@@ -50,7 +50,7 @@ export default function Header() {
           <img
             height="24"
             width="24"
-            src="https://cdn.simpleicons.org/buymeacoffee/CCCCCC/"
+            src="https://cdn.simpleicons.org/buymeacoffee/cccccc/"
             alt="Buy me a coffee"
           />
         </a>
@@ -62,7 +62,7 @@ export default function Header() {
           <img
             height="24"
             width="24"
-            src="https://cdn.simpleicons.org/github/CCCCCC/"
+            src="https://cdn.simpleicons.org/github/cccccc/"
             alt="GitHub"
           />
         </a>
