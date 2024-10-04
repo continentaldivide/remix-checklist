@@ -56,7 +56,7 @@ interface toggleMenu {
 
 interface toggleIgnore {
   type: "toggle ignore";
-  // as currently implemented, these category options MUST match the props of appState.ignoredMap!
+  // as currently implemented, these category options MUST match the props of appState.ignoredItems!
   category: "nonEvent" | "armor" | "mounts" | "toys" | "obtained";
 }
 
