@@ -6,7 +6,7 @@ import { Analytics } from "@vercel/analytics/react";
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://remixchecklist.com'),
+  metadataBase: new URL("https://remixchecklist.com"),
   title: "Remix Checklist",
   description: "Keep track of your rewards in Mists of Pandaria: Remix",
   openGraph: {
@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>
+      <body className={`w-screen overflow-x-hidden ${dmSans.className}`}>
         {children}
         <Analytics />
       </body>
