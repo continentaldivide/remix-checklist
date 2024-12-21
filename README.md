@@ -1,3 +1,31 @@
+# Remix Checklist
+
 ## What's Remix Checklist?
 
-Coming soon.
+Welcome to the repo for Remix Checklist! This webapp was created as a tool for people playing World of Warcraft's ["Mists of Pandaria: Remix"](https://worldofwarcraft.blizzard.com/en-us/news/24092672/world-of-warcraft-remix-mists-of-pandaria-now-live) event. The event added tons of new things for players to collect with an event-specific currency, "bronze." During the event's preliminary test weekend, folks took note of all the new items and prices, and one reddit user compiled them into a spreadsheet. I was inspired to translate that data into an interactive checklist for people like myself who are allergic to spreadsheets, or who might simply find a web UI easier to manage on a mobile device than a spreadsheet would be.
+
+## Goals
+
+One of the things that excited me about this project was an implicit "due date." On some other projects, I've had a hard time finding the right balance between spending additional time improving or adding features vs. getting the thing shipped and in the hands of users. Since the Remix event would begin on a specific date -- and since collectors would want to start tracking their progress right away -- I had a deadline that would force me to ship when it was time to ship and demand that I at least reached MVP by that date.
+
+Another goal was treating mobile design and interactivity as a priority rather than just a "nice-to-have." My previous project, Destiny Status, revealed to me that 90% of my traffic was likely to come from mobile devices, a reality that's still hard for me to wrap my head around. For this project, I wanted to _actually_ go mobile-first to make sure those users had a great experience.
+
+Finally, I wanted to make robust use of the state reducer design pattern in tandem with React's useContext API. I'd practiced this on a basic level, but wanted to solidify my understanding by using it in a real-world application with more complex state.
+
+## Wins
+
+While working on this project, I knew it'd be useful to me, and I hoped it'd be useful to other folks too. Nevertheless, I was blown away by the positive reception I received. On the first day of the event, the site received ~3,400 unique visitors, and over the first week, continued to receive around a thousand unique visitors/day. During that time, visitors were referred from English, German, and Russian WoW fan sites, Facebook, YouTube, Twitter, and Twitch. It was humbling and gratifying to see such a positive response, and several hundreds of folks continued using the site for the duration of the event.
+
+There were also some exciting wins from a technical perspective. After announcing the app on Reddit, one user suggested a great feature idea that would clearly improve UX for visitors. It was extremely satisfying to be able to quickly jam on the idea, implement it, deploy it, and communicate to the user only a couple hours later that their suggestion was live on the site. Another unanticipated technical win: visitors to the repository! I was completely unprepared for folks to show up and offer to contribute work, suggest additional improvements, and star the repo.
+
+## Challenges
+
+The last win -- contributors -- ended up being a challenge in its own right. My previous projects tolerated an extremely simple git workflow: one feature branch at a time, with a single contributor, eventually getting merged into main. This project was my first introduction to the idea of "version branches" as parents to feature branches -- essentially, using sub-branches that could be merged into a still-in-progress version branch, accumulating and merging work without having to deploy to production. (The timing turned out to be convenient as I'd see this strategy on a larger scale at my 2024 internship at SoBet.)
+
+A technical challenge I wrestled with on this project is one common to many engineers and many projects: striking the balance between keeping things easy to change, and not getting carried away and future-proofing for every conceivable additional feature. I did a better job of this here than I did in some previous projects, with one significant exception. When designing the title/menu bar, the sticky currency display, and the sticky vendor headers, I unwittingly created an impenetrable trap for myself. Weeks later, I tried to adjust the page layout to fix the title/menu bar to the top of the screen. Unfortunately, the jank could not be overcome. It was a good reminder that keeping things _generally_ easy to change is always best, with or without specific ideas for future features that would provoke such a change.
+
+One other challenge represented in this project is the eternal struggle between importing helpful tools/packages vs. avoiding dependency hell. Philosophically, my default state is to be extremely suspicious of external code. I consider "other people's code" (OPC) to be a gigantic liability; we've seen as a community time and time again how things can go wrong when OPC breaks, stops being maintained, or worst of all is used as an attack surface. All of that is above and beyond the additional work necessary to _understand_ OPC (maybe they have a great API and docs...or, maybe not) or how much page weight is increased by the dependency. Ultimately my view is that OPC is sometimes a net gain, but it has to have significant upsides to justify its implicit major downsides.
+
+Of course, it's all a matter of balance. In this project I needed a switch component for my menu options. This need was a good opportunity to consider what kinds of situations/use cases can tip the scales, weighed _heavily_ against reaching for a package to meet a minor need, towards the off-the-shelf option. Here, I decided that a UI component is a relatively innocuous inclusion: (a) the function it fills is a "need," not just a "nice to have;" (b) some of the more complex UI elements are meaningfully more difficult to hand roll than an algorithm for, say, left-padding a number; and (c) Headless UI's React library has only 4 dependencies, limiting the overall dependency risk surface.
+
+I still think perhaps homebrewing my own switch may have been a better option, but I was glad to be in a situation where I needed to wrestle with the question and it wasn't an obvious choice.
