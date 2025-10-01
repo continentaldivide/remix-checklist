@@ -1,4 +1,4 @@
-import bronze from "../_data/bronze";
+import bronze from "../_data/bronze-2";
 import Vendor from "../_components/Vendor";
 import { useEffect } from "react";
 import useCalculateBronze from "../_hooks/useCalculateBronze";
