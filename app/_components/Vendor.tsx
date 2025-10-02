@@ -1,13 +1,21 @@
 import { VendorType } from "../_interfaces/Bronze.interface";
 import { useAppStateContext } from "../_context/AppStateContext";
 import useFilterItems from "../_hooks/useFilterItems";
+import useEventClasses from "../_hooks/useEventClasses";
 
-export default function Vendor({ vendor }: { vendor: VendorType }) {
+export default function Vendor({
+  vendor,
+  event,
+}: {
+  vendor: VendorType;
+  event: "mists" | "legion";
+}) {
   const { appState, appStateDispatch } = useAppStateContext();
   const vendorIsClosed = appState.closedVendorMap[vendor.id];
   const vendorIsIgnored = appState.ignoredVendorMap[vendor.id];
 
-  const itemComponents = useFilterItems(vendor.items);
+  const itemComponents = useFilterItems(vendor.items, event);
+  const { bg900, bg950 } = useEventClasses(event);
 
   if (itemComponents.length === 0) {
     return;
@@ -28,7 +36,7 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
         <div
           className={`flex gap-1 justify-between items-center p-2 text-center ${
             vendorIsClosed ? "rounded-md" : "rounded-t-md"
-          }  bg-emerald-950 ${vendorIsIgnored ? "brightness-50" : null}`}
+          }  ${bg950} ${vendorIsIgnored ? "brightness-50" : null}`}
         >
           <div className="size-8 flex justify-center items-center">
             <button
@@ -69,7 +77,9 @@ export default function Vendor({ vendor }: { vendor: VendorType }) {
           />
         </div>
         {/* This div hides the top corners of item components from peeking out behind the rounded top edges of vendor banners */}
-        <div className="absolute top-0 left-0 -z-10 w-full bg-emerald-900 min-h-2"></div>
+        <div
+          className={`absolute top-0 left-0 -z-10 w-full ${bg900} min-h-2`}
+        ></div>
       </div>
       {vendorIsIgnored || vendorIsClosed ? null : itemComponents}
     </div>
