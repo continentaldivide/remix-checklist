@@ -1,6 +1,6 @@
 import { BronzeType } from "../_interfaces/Bronze.interface";
 
-const bronze: BronzeType = {
+const legionBronze: BronzeType = {
   vendors: [
     {
       name: "Aeonicus",
@@ -3121,4 +3121,4 @@ const bronze: BronzeType = {
   ],
 };
 
-export default bronze;
+export default legionBronze;

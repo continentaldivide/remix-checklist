@@ -1,4 +1,5 @@
-import bronze from "../_data/bronze-2";
+import mistsBronze from "../_data/mistsBronze";
+import legionBronze from "../_data/legionBronze";
 import Vendor from "../_components/Vendor";
 import { useEffect } from "react";
 import useCalculateBronze from "../_hooks/useCalculateBronze";
@@ -6,7 +7,7 @@ import useGetLocalState from "../_hooks/useGetLocalState";
 import { useAppStateContext } from "../_context/AppStateContext";
 import NewsModal from "./NewsModal";
 
-export default function App() {
+export default function App({ event }: { event: "mists" | "legion" }) {
   const { appState, appStateDispatch } = useAppStateContext();
 
   useGetLocalState();
@@ -20,6 +21,9 @@ export default function App() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // guess I'm gonna have to refactor this when I come back in 18 months for the next remix
+  let bronze = event === "legion" ? legionBronze : mistsBronze;
 
   let bronzeTotal = useCalculateBronze(
     bronze,
