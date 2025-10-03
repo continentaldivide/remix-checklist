@@ -1,15 +1,19 @@
-import bronze from "../_data/bronze";
+import mistsBronze from "../_data/mistsBronze";
+import legionBronze from "../_data/legionBronze";
 import Vendor from "../_components/Vendor";
 import { useEffect } from "react";
 import useCalculateBronze from "../_hooks/useCalculateBronze";
 import useGetLocalState from "../_hooks/useGetLocalState";
+import useEventClasses from "../_hooks/useEventClasses";
 import { useAppStateContext } from "../_context/AppStateContext";
 import NewsModal from "./NewsModal";
 
-export default function App() {
+export default function App({ event }: { event: "mists" | "legion" }) {
   const { appState, appStateDispatch } = useAppStateContext();
 
   useGetLocalState();
+
+  const { bg900, bg900fade } = useEventClasses(event);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +25,9 @@ export default function App() {
     };
   }, []);
 
+  // guess I'm gonna have to refactor this when I come back in 18 months for the next remix
+  let bronze = event === "legion" ? legionBronze : mistsBronze;
+
   let bronzeTotal = useCalculateBronze(
     bronze,
     appState.checkedMap,
@@ -29,14 +36,16 @@ export default function App() {
   );
 
   const vendors = bronze.vendors.map((vendor, i) => {
-    return <Vendor vendor={vendor} key={`vendor ${i}`} />;
+    return <Vendor vendor={vendor} event={event} key={`vendor ${i}`} />;
   });
 
   return (
     <div className="flex flex-col items-center pb-20 xl:w-2/5 mx-auto">
       {appState.newsOpen ? <NewsModal /> : null}
       {/* z-positioning here needs to be higher than Vendor header so that Vendor header hides when it gets bumped off the screen by the next vendor */}
-      <h1 className="text-xl lg:text-3xl text-center p-2 z-20 sticky min-h-11 lg:min-h-14 min-w-full top-0 bg-emerald-900">
+      <h1
+        className={`text-xl lg:text-3xl text-center p-2 z-20 sticky min-h-11 lg:min-h-14 min-w-full top-0 ${bg900}`}
+      >
         total{" "}
         <img
           height="24"
@@ -57,7 +66,7 @@ export default function App() {
               position: 0,
             });
           }}
-          className="fixed bottom-4 min-w-[50%] xl:min-w-48 text-xl lg:text-2xl p-2 bg-emerald-900/90 rounded-md z-20"
+          className={`fixed bottom-4 min-w-[50%] xl:min-w-48 text-xl lg:text-2xl p-2 ${bg900fade} rounded-md z-20`}
         >
           back to top
         </button>

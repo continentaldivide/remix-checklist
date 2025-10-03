@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { useAppStateContext } from "../_context/AppStateContext";
+import useEventClasses from "../_hooks/useEventClasses";
 import Menu from "./Menu";
 
-export default function Header() {
+export default function Header({ event }: { event: "mists" | "legion" }) {
   const [newsIconStyle, setNewsIconStyle] = useState("");
   const { appState, appStateDispatch } = useAppStateContext();
+
+  const { bg950 } = useEventClasses(event);
 
   useEffect(() => {
     if (appState.currentVersion !== appState.lastNewsVersion) {
@@ -15,7 +18,9 @@ export default function Header() {
   }, [appState.lastNewsVersion]);
 
   return (
-    <div className="bg-emerald-950 min-h-12 px-6 flex justify-between items-center relative">
+    <div
+      className={`${bg950} min-h-12 px-6 flex justify-between items-center relative`}
+    >
       {/* left and right side divs need matching widths to properly center the title */}
       <div className="w-20 flex">
         <button
@@ -28,7 +33,9 @@ export default function Header() {
         </button>
       </div>
       {/* yPosition condition below is because menu looks jank when starting to scroll.  When the header is fixed to top in a future update, this condition will need to be removed. */}
-      {appState.menuOpen && appState.yPosition === 0 ? <Menu /> : null}
+      {appState.menuOpen && appState.yPosition === 0 ? (
+        <Menu event={event} />
+      ) : null}
       <h1 className="text-xl lg:text-2xl font-bold">Remix Checklist</h1>
       <div className="w-20 flex gap-2 justify-end">
         <button
