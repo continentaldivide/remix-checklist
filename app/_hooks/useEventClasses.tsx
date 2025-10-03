@@ -10,6 +10,7 @@ export default function useEventClasses(event: EventType) {
       oddBg700: string;
       evenBg800: string;
       text900: string;
+      border700: string;
     }
   > = {
     mists: {
@@ -19,6 +20,7 @@ export default function useEventClasses(event: EventType) {
       oddBg700: "odd:bg-emerald-700",
       evenBg800: "even:bg-emerald-800",
       text900: "text-emerald-900",
+      border700: "border-emerald-700",
     },
     legion: {
       bg900: "bg-[#134F11]",
@@ -27,6 +29,7 @@ export default function useEventClasses(event: EventType) {
       oddBg700: "odd:bg-[#1A6918]",
       evenBg800: "even:bg-[#20851E]",
       text900: "text-[#134F11]",
+      border700: "border-[#1A6918]",
     },
   };
   return eventClasses[event];
