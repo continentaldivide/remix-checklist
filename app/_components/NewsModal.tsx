@@ -10,9 +10,11 @@ export default function NewsModal() {
   };
 
   useEffect(() => {
-    document.body.style.overflow = appState.newsOpen ? "hidden" : "unset";
+    document.body.style.overflow = appState.newsOpen
+      ? "hidden"
+      : "revert-layer";
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "revert-layer";
     };
   }, [appState.newsOpen]);
 
