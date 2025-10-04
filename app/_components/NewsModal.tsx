@@ -1,13 +1,16 @@
 import { useEffect } from "react";
 import { useAppStateContext } from "../_context/AppStateContext";
+import useEventClasses from "../_hooks/useEventClasses";
 import NewsItem from "./NewsItem";
 import updates from "../_data/updates";
 
-export default function NewsModal() {
+export default function NewsModal({ event }: { event: "mists" | "legion" }) {
   const { appState, appStateDispatch } = useAppStateContext();
   const closeModal = () => {
     appStateDispatch({ type: "toggle news", openOrClose: "close" });
   };
+
+  const { bg600, bg700, hoverbg800, activebg900 } = useEventClasses(event);
 
   useEffect(() => {
     document.body.style.overflow = appState.newsOpen
@@ -38,15 +41,19 @@ export default function NewsModal() {
         className="fixed inset-0 bg-neutral-900/40 z-40 animate-modal-bg-fade"
         onClick={closeModal}
       ></div>
-      <div className="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 md:w-3/4 xl:w-1/2 bg-emerald-600 rounded-xl z-50 shadow-lg animate-modal-appear">
-        <h1 className="bg-emerald-700 rounded-t-xl text-2xl text-center font-bold p-4">
+      <div
+        className={`fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-4/5 md:w-3/4 xl:w-1/2 ${bg600} rounded-xl z-50 shadow-lg animate-modal-appear`}
+      >
+        <h1
+          className={`${bg700} rounded-t-xl text-2xl text-center font-bold p-4`}
+        >
           What's new?
         </h1>
         <div className="flex flex-col">
           <div className="overflow-auto max-h-[60svh]">{newsItems}</div>
           <button
             onClick={closeModal}
-            className="m-4 px-4 py-1 text-lg font-semibold bg-emerald-700 hover:bg-emerald-800 active:bg-emerald-900 rounded-md mx-auto"
+            className={`m-4 px-4 py-1 text-lg font-semibold ${bg700} ${hoverbg800} ${activebg900} rounded-md mx-auto`}
           >
             Got it, thanks!
           </button>

@@ -41,7 +41,7 @@ export default function App({ event }: { event: "mists" | "legion" }) {
 
   return (
     <div className="flex flex-col items-center pb-20 xl:w-2/5 mx-auto">
-      {appState.newsOpen ? <NewsModal /> : null}
+      {appState.newsOpen ? <NewsModal event={event}/> : null}
       {/* z-positioning here needs to be higher than Vendor header so that Vendor header hides when it gets bumped off the screen by the next vendor */}
       <h1
         className={`text-xl lg:text-3xl text-center p-2 z-20 sticky min-h-11 lg:min-h-14 min-w-full top-0 ${bg900}`}
