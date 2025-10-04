@@ -49,7 +49,7 @@ export default function Item({
           className="brightness-50 rounded-md"
         />
         <p className="absolute top-2 lg:top-3 w-8 lg:w-12 text-xs lg:text-base font-bold flex justify-center">
-          {item.cost}
+          {item.cost / 1000}k
         </p>
       </div>
       <input
