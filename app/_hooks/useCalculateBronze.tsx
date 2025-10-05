@@ -8,8 +8,8 @@ export default function useCalculateBronze(
   ignoredItems: IgnoredItemsType
 ) {
   let sum = 0;
-  bronze.vendors.forEach((vendor, i) => {
-    if (ignoredVendorMap[i]) {
+  bronze.vendors.forEach((vendor) => {
+    if (ignoredVendorMap[vendor.id]) {
       return;
     }
     vendor.items.forEach((item) => {

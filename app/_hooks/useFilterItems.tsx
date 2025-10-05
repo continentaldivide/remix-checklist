@@ -2,7 +2,7 @@ import { ItemType } from "../_interfaces/Bronze.interface";
 import Item from "../_components/Item";
 import { useAppStateContext } from "../_context/AppStateContext";
 
-export default function useFilterItems(items: ItemType[]) {
+export default function useFilterItems(items: ItemType[], event: "mists" | "legion") {
   const { appState } = useAppStateContext();
   const unignoredItems = items.map((item, i) => {
     if (!item.eventOnlyItem && appState.ignoredItems.nonEvent) {
@@ -11,7 +11,7 @@ export default function useFilterItems(items: ItemType[]) {
     if (appState.checkedMap[item.id] && appState.ignoredItems.obtained) {
       return;
     }
-    return <Item item={item} key={`item ${i}`} />;
+    return <Item item={item} event={event} key={`item ${i}`} />;
   });
 
   const definedItems = unignoredItems.filter((item) => {

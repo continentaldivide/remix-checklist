@@ -1,15 +1,23 @@
 import { ItemType } from "../_interfaces/Bronze.interface";
 import { useAppStateContext } from "../_context/AppStateContext";
+import useEventClasses from "../_hooks/useEventClasses";
 
-export default function Item({ item }: { item: ItemType }) {
+export default function Item({
+  item,
+  event,
+}: {
+  item: ItemType;
+  event: "mists" | "legion";
+}) {
   const { appState, appStateDispatch } = useAppStateContext();
   const handleItemClick = () => {
     appStateDispatch({ type: "toggle checked", id: item.id });
   };
+  const { oddBg700, evenBg800, text900 } = useEventClasses(event);
 
   return (
     <div
-      className="flex justify-end min-h-16 odd:bg-emerald-700 even:bg-emerald-800 select-none cursor-pointer last:rounded-b-md"
+      className={`flex justify-end min-h-16 ${oddBg700} ${evenBg800} select-none cursor-pointer last:rounded-b-md`}
       onClick={handleItemClick}
     >
       <div className="w-full mx-2 my-auto">
@@ -41,7 +49,7 @@ export default function Item({ item }: { item: ItemType }) {
           className="brightness-50 rounded-md"
         />
         <p className="absolute top-2 lg:top-3 w-8 lg:w-12 text-xs lg:text-base font-bold flex justify-center">
-          {item.cost}
+          {event === "legion" ? `${item.cost / 1000}k` : item.cost}
         </p>
       </div>
       <input
@@ -51,7 +59,7 @@ export default function Item({ item }: { item: ItemType }) {
         readOnly
         // operation below works fine without the OR condition, but makes react throw an error if checkedMap[item.id] produces a falsy value instead of a bool
         checked={appState.checkedMap[item.id] || false}
-        className="size-8 lg:size-12 mx-2 my-auto text-emerald-900 rounded-md cursor-pointer"
+        className={`size-8 lg:size-12 mx-2 my-auto ${text900} rounded-md cursor-pointer`}
       />
     </div>
   );

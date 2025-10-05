@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { AppProviders } from "./_components/AppProviders";
 
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
@@ -28,8 +29,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`w-screen overflow-x-hidden ${dmSans.className}`}>
-        {children}
-        <Analytics />
+        <AppProviders>
+          {children}
+          <Analytics />
+        </AppProviders>
       </body>
     </html>
   );
