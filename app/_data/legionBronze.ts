@@ -1419,7 +1419,7 @@ const legionBronze: BronzeType = {
         {
           name: "Ensemble: Chains of Nightmare's Embrace",
           cost: 15000,
-          id: 1154,
+          id: 1500,
           eventOnlyItem: false,
           wowheadId: 241434,
           type: "mail",
