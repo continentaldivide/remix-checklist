@@ -2,6 +2,11 @@ import { UpdateType } from "../_interfaces/Update.interface";
 
 const updates: UpdateType[] = [
   {
+    version: "2.0.0",
+    releaseDate: "October 4, 2025",
+    changes: ["Updated the app for Legion Remix."],
+  },
+  {
     version: "1.0.1",
     releaseDate: "June 28, 2024",
     changes: [
