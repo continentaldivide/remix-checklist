@@ -2949,7 +2949,7 @@ const legionBronze: BronzeType = {
           wowheadId: 239699,
         },
         {
-          name: "Sone of Goredome",
+          name: "Son of Goredome",
           cost: 5000,
           id: 1291,
           eventOnlyItem: true,
