@@ -2,6 +2,7 @@ import { BronzeType } from "../_interfaces/Bronze.interface";
 
 const legionBronze: BronzeType = {
   vendors: [
+    /*
     {
       name: "Aeonicus",
       description: "Raid Finder Apparel",
@@ -1036,6 +1037,7 @@ const legionBronze: BronzeType = {
         },
       ],
     },
+    */
     {
       name: "Pythagorus",
       description: "Mythic Raid Apparel",
