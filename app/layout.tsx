@@ -9,10 +9,10 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://remixchecklist.com"),
   title: "Remix Checklist",
-  description: "Keep track of your rewards in Mists of Pandaria: Remix",
+  description: "Keep track of your rewards in Legion: Remix",
   openGraph: {
     title: "Remix Checklist",
-    description: "Keep track of your rewards in Mists of Pandaria: Remix",
+    description: "Keep track of your rewards in Legion: Remix",
     images: [
       {
         url: "/thumbnail.png",
