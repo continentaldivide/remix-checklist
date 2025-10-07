@@ -30,6 +30,11 @@ interface setYPosition {
   position: number;
 }
 
+interface setSearchQuery {
+  type: "set searchQuery";
+  searchQuery: string;
+}
+
 interface toggleShowVendor {
   type: "toggle show vendor";
   id: number;
@@ -67,6 +72,7 @@ export type AppActionsType =
   | setLastNewsVersion
   | setIgnoredItems
   | setYPosition
+  | setSearchQuery
   | toggleShowVendor
   | toggleIgnoreVendor
   | toggleChecked

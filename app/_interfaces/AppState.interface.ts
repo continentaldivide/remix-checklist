@@ -8,6 +8,7 @@ export interface AppStateType {
   menuOpen: boolean;
   currentVersion: string;
   lastNewsVersion: string;
+  searchQuery: string;
 }
 
 export interface IgnoredItemsType {

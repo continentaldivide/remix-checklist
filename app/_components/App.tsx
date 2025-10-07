@@ -13,7 +13,7 @@ export default function App({ event }: { event: "mists" | "legion" }) {
 
   useGetLocalState();
 
-  const { bg900, bg900fade } = useEventClasses(event);
+  const { bg900, bg900fade, bg950 } = useEventClasses(event);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +41,7 @@ export default function App({ event }: { event: "mists" | "legion" }) {
 
   return (
     <div className="flex flex-col items-center pb-20 xl:w-2/5 mx-auto">
-      {appState.newsOpen ? <NewsModal event={event}/> : null}
+      {appState.newsOpen ? <NewsModal event={event} /> : null}
       {/* z-positioning here needs to be higher than Vendor header so that Vendor header hides when it gets bumped off the screen by the next vendor */}
       <h1
         className={`text-xl lg:text-3xl text-center p-2 z-20 sticky min-h-11 lg:min-h-14 min-w-full top-0 ${bg900}`}
@@ -55,6 +55,22 @@ export default function App({ event }: { event: "mists" | "legion" }) {
           alt="bronze coin"
         ></img>{" "}
         required: {bronzeTotal}
+      </h1>
+      <h1
+        className={`text-center p-2 z-20 sticky top-11 xl:top-14 min-h-11 lg:min-h-14 min-w-full ${bg900}`}
+      >
+        <input
+          value={appState.searchQuery}
+          type="search"
+          placeholder="search by item name"
+          onChange={(e) =>
+            appStateDispatch({
+              type: "set searchQuery",
+              searchQuery: e.target.value,
+            })
+          }
+          className={`h-10 p-6 flex-grow xl:text-2xl outline-none ${bg950} rounded-md`}
+        />
       </h1>
       {vendors}
       {appState.yPosition === 0 ? null : (

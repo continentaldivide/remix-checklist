@@ -44,6 +44,11 @@ const appStateReducer: (
         ...state,
         yPosition: action.position,
       };
+    case "set searchQuery":
+      return {
+        ...state,
+        searchQuery: action.searchQuery,
+      };
     case "toggle show vendor":
       let newVendorMap = { ...state.closedVendorMap };
       newVendorMap[action.id] = !state.closedVendorMap[action.id];
@@ -120,6 +125,7 @@ const initialState: AppStateType = {
   menuOpen: false,
   currentVersion: packageInfo.version,
   lastNewsVersion: "",
+  searchQuery: "",
 };
 
 export function AppStateContextProvider({ children }: { children: ReactNode }) {
