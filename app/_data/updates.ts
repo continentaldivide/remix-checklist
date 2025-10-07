@@ -14,7 +14,6 @@ const updates: UpdateType[] = [
     releaseDate: "October 4, 2025",
     changes: ["Updated the app for Legion Remix."],
   },
-
   {
     version: "1.0.1",
     releaseDate: "June 28, 2024",
