@@ -1,8 +1,6 @@
-export default function NewsItem({
-  news,
-}: {
-  news: { version: string; releaseDate: string; changes: string[] };
-}) {
+import { UpdateType } from "../_interfaces/Update.interface";
+
+export default function NewsItem({ news }: { news: UpdateType }) {
   const changes = news.changes.map((change, i) => {
     return (
       <li
