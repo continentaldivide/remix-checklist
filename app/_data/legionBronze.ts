@@ -3091,6 +3091,14 @@ const legionBronze: BronzeType = {
         //   wowheadId: 144394,
         // },
         {
+          name: "Skull of Corruption",
+          cost: 100000,
+          id: 1407,
+          class: "demon hunter",
+          eventOnlyItem: false,
+          wowheadId: 143544,
+        },
+        {
           name: "Big Red Raygun",
           cost: 35000,
           id: 1310,
