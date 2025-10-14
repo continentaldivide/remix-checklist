@@ -2,6 +2,13 @@ import { UpdateType } from "../_interfaces/Update.interface";
 
 const updates: UpdateType[] = [
   {
+    version: "2.0.3",
+    releaseDate: "October 14, 2025",
+    changes: [
+      "Added Skull of Corruption to Horos' inventory.",
+    ],
+  },
+  {
     version: "2.0.2",
     releaseDate: "October 7, 2025",
     changes: [
