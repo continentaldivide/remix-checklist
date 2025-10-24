@@ -2,6 +2,13 @@ import { UpdateType } from "../_interfaces/Update.interface";
 
 const updates: UpdateType[] = [
   {
+    version: "2.0.4",
+    releaseDate: "October 24, 2025",
+    changes: [
+      "Added Torn Invitation (rewards Gilnean Prowler) to Hemet's inventory.",
+    ],
+  },
+  {
     version: "2.0.3",
     releaseDate: "October 14, 2025",
     changes: [

@@ -2643,6 +2643,13 @@ const legionBronze: BronzeType = {
           wowheadId: 138258,
         },
         {
+          name: "Torn Invitation",
+          cost: 40000,
+          id: 1408,
+          eventOnlyItem: false,
+          wowheadId: 140495,
+        },
+        {
           name: "Spirit of Eche'ro",
           cost: 40000,
           id: 1247,
