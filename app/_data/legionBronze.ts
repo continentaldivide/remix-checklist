@@ -2306,13 +2306,13 @@ const legionBronze: BronzeType = {
           eventOnlyItem: true,
           wowheadId: 253565,
         },
-        // {
-        //   name: "Arsenal: Gems of the Lightforged Draenei",
-        //   cost: 2500,
-        //   id: 1381,
-        //   eventOnlyItem: true,
-        //   wowheadId: 253569,
-        // },
+        {
+          name: "Arsenal: Gems of the Lightforged Draenei",
+          cost: 2500,
+          id: 1381,
+          eventOnlyItem: true,
+          wowheadId: 253569,
+        },
       ],
     },
     {
