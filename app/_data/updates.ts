@@ -2,6 +2,11 @@ import { UpdateType } from "../_interfaces/Update.interface";
 
 const updates: UpdateType[] = [
   {
+    version: "2.0.5",
+    releaseDate: "November 22, 2025",
+    changes: ["Re-added Gems of the Lightforged Draenei to Unicus' inventory."],
+  },
+  {
     version: "2.0.4",
     releaseDate: "October 24, 2025",
     changes: [
@@ -11,9 +16,7 @@ const updates: UpdateType[] = [
   {
     version: "2.0.3",
     releaseDate: "October 14, 2025",
-    changes: [
-      "Added Skull of Corruption to Horos' inventory.",
-    ],
+    changes: ["Added Skull of Corruption to Horos' inventory."],
   },
   {
     version: "2.0.2",
