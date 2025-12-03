@@ -2,6 +2,11 @@ import { UpdateType } from "../_interfaces/Update.interface";
 
 const updates: UpdateType[] = [
   {
+    version: "2.0.6",
+    releaseDate: "December 3, 2025",
+    changes: ["Added new weapon enchants to Horos' inventory."],
+  },
+  {
     version: "2.0.5",
     releaseDate: "November 22, 2025",
     changes: ["Re-added Gems of the Lightforged Draenei to Unicus' inventory."],
