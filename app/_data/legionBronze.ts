@@ -2972,6 +2972,20 @@ const legionBronze: BronzeType = {
           wowheadId: 129108,
         },
         {
+          name: "Illusion: Nightmare",
+          cost: 80000,
+          id: 1409,
+          eventOnlyItem: false,
+          wowheadId: 138827,
+        },
+        {
+          name: "Illusion: Chronos",
+          cost: 100000,
+          id: 1410,
+          eventOnlyItem: false,
+          wowheadId: 138828,
+        },
+        {
           name: "Strange Humming Crystal",
           cost: 100000,
           id: 1292,
